@@ -1,5 +1,6 @@
 packages/
 App_Data
 aspnet_client/
+.vs/ 
 
 !packages.config

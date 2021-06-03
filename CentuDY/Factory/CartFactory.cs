@@ -2,7 +2,7 @@
 
 namespace CentuDY.Factory {
     public class CartFactory {
-        public static Cart createCart(int userId, int medicineId, int quantity) {
+        public static Cart CreateCart(int userId, int medicineId, int quantity) {
             Cart cart = new Cart();
 
             cart.UserId = userId;

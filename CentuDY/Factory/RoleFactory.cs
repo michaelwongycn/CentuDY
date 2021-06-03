@@ -2,7 +2,7 @@
 
 namespace CentuDY.Factory {
     public class RoleFactory {
-        public static Role createRole(string roleName) {
+        public static Role CreateRole(string roleName) {
             Role role = new Role();
 
             role.RoleName = roleName;

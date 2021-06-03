@@ -2,7 +2,7 @@
 
 namespace CentuDY.Factory {
     public class DetailTransactionFactory {
-        public static DetailTransaction createDetailTransaction(int transactionId, int medicineId,
+        public static DetailTransaction CreateDetailTransaction(int transactionId, int medicineId,
                                                                 int quantity) {
             DetailTransaction detailTransaction = new DetailTransaction();
 

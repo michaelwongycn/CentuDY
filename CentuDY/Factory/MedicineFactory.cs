@@ -2,7 +2,7 @@
 
 namespace CentuDY.Factory {
     public class MedicineFactory {
-        public static Medicine createMedicine(string name, string description, int stock, int price) {
+        public static Medicine CreateMedicine(string name, string description, int stock, int price) {
             Medicine medicine = new Medicine();
 
             medicine.Name = name;

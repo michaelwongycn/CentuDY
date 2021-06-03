@@ -14,8 +14,18 @@ namespace CentuDY.Model
     
     public partial class HeaderTransaction
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public HeaderTransaction()
+        {
+            this.DetailTransaction = new HashSet<DetailTransaction>();
+        }
+    
         public int TransactionId { get; set; }
         public int UserId { get; set; }
         public System.DateTime TransactionDate { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DetailTransaction> DetailTransaction { get; set; }
+        public virtual User User { get; set; }
     }
 }

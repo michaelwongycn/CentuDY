@@ -14,10 +14,22 @@ namespace CentuDY.Model
     
     public partial class Medicine
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Medicine()
+        {
+            this.Cart = new HashSet<Cart>();
+            this.DetailTransaction = new HashSet<DetailTransaction>();
+        }
+    
         public int MedicineId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public int Stock { get; set; }
         public int Price { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Cart> Cart { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DetailTransaction> DetailTransaction { get; set; }
     }
 }

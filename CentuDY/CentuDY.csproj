@@ -79,15 +79,15 @@
     <Content Include="App_Data\CentuDYDB_log.ldf">
       <DependentUpon>CentuDYDB.mdf</DependentUpon>
     </Content>
-    <Content Include="Model\Model.Context.tt">
+    <Content Include="Model\CentuDYModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Model.Context.cs</LastGenOutput>
-      <DependentUpon>Model.edmx</DependentUpon>
+      <DependentUpon>CentuDYModel.edmx</DependentUpon>
+      <LastGenOutput>CentuDYModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Model\Model.tt">
+    <Content Include="Model\CentuDYModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model.edmx</DependentUpon>
-      <LastGenOutput>Model.cs</LastGenOutput>
+      <DependentUpon>CentuDYModel.edmx</DependentUpon>
+      <LastGenOutput>CentuDYModel.cs</LastGenOutput>
     </Content>
     <Content Include="Web.config" />
   </ItemGroup>
@@ -105,37 +105,37 @@
     <Compile Include="Handler\RoleHandler.cs" />
     <Compile Include="Handler\UserHandler.cs" />
     <Compile Include="Model\Cart.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>CentuDYModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CentuDYModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CentuDYModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CentuDYModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CentuDYModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CentuDYModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CentuDYModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Model\DetailTransaction.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>CentuDYModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\HeaderTransaction.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>CentuDYModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Medicine.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Model.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Model.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Model.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model.edmx</DependentUpon>
+      <DependentUpon>CentuDYModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Role.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>CentuDYModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\User.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>CentuDYModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\CartRepository.cs" />
@@ -146,12 +146,12 @@
     <Compile Include="Repository\UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="Model\Model.edmx">
+    <EntityDeploy Include="Model\CentuDYModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+      <LastGenOutput>CentuDYModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Model\Model.edmx.diagram">
-      <DependentUpon>Model.edmx</DependentUpon>
+    <Content Include="Model\CentuDYModel.edmx.diagram">
+      <DependentUpon>CentuDYModel.edmx</DependentUpon>
     </Content>
     <None Include="packages.config" />
     <None Include="Web.Debug.config">

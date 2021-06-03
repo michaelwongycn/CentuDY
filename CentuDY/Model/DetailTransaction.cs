@@ -17,5 +17,8 @@ namespace CentuDY.Model
         public int TransactionId { get; set; }
         public int MedicineId { get; set; }
         public int Quantity { get; set; }
+    
+        public virtual HeaderTransaction HeaderTransaction { get; set; }
+        public virtual Medicine Medicine { get; set; }
     }
 }

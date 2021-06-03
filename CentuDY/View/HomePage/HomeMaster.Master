@@ -1,0 +1,27 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="HomeMaster.master.cs" Inherits="CentuDY.View.HomePage.HomeMaster" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <div class="UserName">
+                Username - Role
+            </div>
+            <asp:Button ID="ViewMedicines" OnClick="ViewMedicines_Click" runat="server" Text="View Medicines" />
+            <asp:Button ID="BtnViewProfile" OnClick="BtnViewProfile_Click" runat="server" Text="View Profile" />
+            <asp:Button ID="BtnLogOut" OnClick="BtnLogOut_Click" runat="server" Text="Log Out" />
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            
+        </div>
+    </form>
+</body>
+</html>

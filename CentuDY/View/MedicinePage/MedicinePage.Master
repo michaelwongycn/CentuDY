@@ -1,0 +1,21 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MedicinePage.master.cs" Inherits="CentuDY.View.MedicinePage.MedicinePage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:Button ID="BtnHomePage" OnClick="BtnHomePage_Click" runat="server" Text="Home" />
+            <asp:Button ID="ViewMedicines" OnClick="ViewMedicines_Click" runat="server" Text="View Medicines" />
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

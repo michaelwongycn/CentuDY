@@ -10,6 +10,5 @@ namespace CentuDY.Controller {
         public static List<DetailTransaction> GetDetailTransactionsByTransaction(int transactionId) {
             return DetailTransactionHandler.GetDetailTransactionsByTransaction(transactionId);
         }
-
     }
 }

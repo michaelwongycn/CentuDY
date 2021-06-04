@@ -2,8 +2,6 @@
 using CentuDY.Model;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace CentuDY.Controller
 {
@@ -21,9 +19,9 @@ namespace CentuDY.Controller
         {
             return CartHandler.Checkout(userId);
         }
-        public static Boolean AddCart(Cart cart)
+        public static Boolean AddCart(int userId, int medicineId, int quantity)
         {
-            return CartHandler.AddCart(cart);
+            return CartHandler.AddCart(userId, medicineId, quantity);
         }
     }
 }

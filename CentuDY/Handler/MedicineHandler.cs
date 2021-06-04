@@ -1,4 +1,5 @@
-﻿using CentuDY.Model;
+﻿using CentuDY.Factory;
+using CentuDY.Model;
 using CentuDY.Repository;
 using System;
 using System.Collections.Generic;
@@ -37,7 +38,8 @@ namespace CentuDY.Handler {
             return MedicineRepository.GetMedicineByKeyword(keyword);
         }
 
-        public static void AddMedicine(Medicine medicine) {
+        public static void AddMedicine(string name, string description, int stock, int price) {
+            Medicine medicine = MedicineFactory.CreateMedicine(name, description, stock, price);
             MedicineRepository.AddMedicine(medicine);
         }
 

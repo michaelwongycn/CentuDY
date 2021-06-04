@@ -3,8 +3,6 @@ using CentuDY.Model;
 using CentuDY.Repository;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace CentuDY.Handler {
     public class CartHandler {
@@ -20,14 +18,15 @@ namespace CentuDY.Handler {
             return CartRepository.GetCartByUserAndMedicine(userId, medicineId);
         }
 
-        public static Boolean AddCart(Cart cart) {
-            Cart tempCart = CartRepository.GetCartByUserAndMedicine(cart.UserId, cart.MedicineId);
+        public static Boolean AddCart(int userId, int medicineId, int quantity) {
+            Cart tempCart = CartRepository.GetCartByUserAndMedicine(quantity, medicineId);
 
             if (tempCart != null) {
-                CartRepository.UpdateCartQuantity(cart.UserId, cart.MedicineId, cart.Quantity);
+                CartRepository.UpdateCartQuantity(userId, medicineId, quantity);
                 return false;
             }
             else {
+                Cart cart = CartFactory.CreateCart(userId, medicineId, quantity);
                 CartRepository.AddCart(cart);
                 return true;
             }
@@ -54,14 +53,16 @@ namespace CentuDY.Handler {
             else {
                 DateTime time = DateTime.Now;
 
-                HeaderTransaction headerTransaction =
-                    HeaderTransactionFactory.createHeaderTransaction(userId, time);
+                HeaderTransaction headerTransaction = HeaderTransactionFactory.CreateHeaderTransaction(userId, time);
                 HeaderTransactionRepository.AddHeaderTransaction(headerTransaction);
-                //int id = >>>;
 
-                foreach(Cart cart in cartList) {
+                HeaderTransaction lastInsertedHt = HeaderTransactionRepository.GetLastInsertedTransaction();
+
+                int id = lastInsertedHt.TransactionId;
+
+                foreach (Cart cart in cartList) {
                     DetailTransaction detailTransaction =
-                        DetailTransactionFactory.createDetailTransaction(0, cart.MedicineId, cart.Quantity);
+                        DetailTransactionFactory.CreateDetailTransaction(id, cart.MedicineId, cart.Quantity);
 
                     DetailTransactionRepository.AddDetailTransaction(detailTransaction);
                 }

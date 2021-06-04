@@ -1,9 +1,8 @@
-﻿using CentuDY.Model;
+﻿using CentuDY.Factory;
+using CentuDY.Model;
 using CentuDY.Repository;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace CentuDY.Handler {
     public class UserHandler {
@@ -24,13 +23,15 @@ namespace CentuDY.Handler {
             return UserRepository.GetUserByUsernameAndPassword(username, password);
         }
 
-        public static Boolean AddUser(User user) {
-            User tempUser = UserRepository.GetUserByUsername(user.Username);
+        public static Boolean AddUser(string username, string password, string name, string gender, string phoneNumber, string address) {
+            
+            User tempUser = UserRepository.GetUserByUsername(username);
 
-            if(tempUser != null) {
+            if (tempUser != null) {
                 return false;
             }
             else {
+                User user = UserFactory.CreateUser(2, username, password, name, gender, phoneNumber, address);
                 UserRepository.AddUser(user);
                 return true;
             }

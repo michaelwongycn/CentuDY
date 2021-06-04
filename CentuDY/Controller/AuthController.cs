@@ -1,10 +1,6 @@
-﻿using CentuDY.Factory;
-using CentuDY.Handler;
+﻿using CentuDY.Handler;
 using CentuDY.Model;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace CentuDY.Controller
 {
@@ -37,9 +33,7 @@ namespace CentuDY.Controller
             if (address == "") { return "Address must be filled"; }
             if (!address.Contains("Street")){ return "Address must contain the word 'Street'"; }
 
-            User user = UserFactory.CreateUser(2, username, password, name, gender, phoneNumber, address);
-
-            Boolean result = UserHandler.AddUser(user);
+            Boolean result = UserHandler.AddUser(username, password, name, gender, phoneNumber, address);
 
             if (result) { return "Register Success"; }
 

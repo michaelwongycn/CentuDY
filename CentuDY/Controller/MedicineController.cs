@@ -1,10 +1,7 @@
-﻿using CentuDY.Factory;
-using CentuDY.Handler;
+﻿using CentuDY.Handler;
 using CentuDY.Model;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace CentuDY.Controller
 {
@@ -29,8 +26,7 @@ namespace CentuDY.Controller
             if (stock <= 0) { return "Stock must be more than 0"; }
             if (price <= 0){ return "Price must be more than 0"; }
             
-            Medicine medicine = MedicineFactory.CreateMedicine(name, description, stock, price);
-            MedicineHandler.AddMedicine(medicine);
+            MedicineHandler.AddMedicine(name, description, stock, price);
 
             return "Insert Success";
         }

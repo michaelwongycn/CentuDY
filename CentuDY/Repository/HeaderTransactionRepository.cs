@@ -26,6 +26,14 @@ namespace CentuDY.Repository {
                     select headerTransaction).ToList();
         }
 
+        public static HeaderTransaction GetLastInsertedTransaction() {
+            CentuDYDBEntities db = new CentuDYDBEntities();
+            return (from headerTransaction
+                    in db.HeaderTransaction
+                    orderby headerTransaction.TransactionId descending
+                    select headerTransaction).FirstOrDefault();
+        }
+
         public static void AddHeaderTransaction(HeaderTransaction headerTransaction) {
             CentuDYDBEntities db = new CentuDYDBEntities();
             db.HeaderTransaction.Add(headerTransaction);

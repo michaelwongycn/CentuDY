@@ -95,6 +95,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\AuthController.cs" />
+    <Compile Include="Controller\CartController.cs" />
+    <Compile Include="Controller\DetailTransactionController.cs" />
+    <Compile Include="Controller\HeaderTransactionController.cs" />
     <Compile Include="Controller\MedicineController.cs" />
     <Compile Include="Controller\UserController.cs" />
     <Compile Include="Factory\CartFactory.cs" />

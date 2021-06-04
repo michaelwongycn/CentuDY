@@ -1,5 +1,3 @@
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\obj\Debug\CentuDY.csprojAssemblyReference.cache
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\obj\Debug\CentuDY.csproj.CoreCompileInputs.cache
 E:\Videos\Kuliah\Semester 4\Pattern Software Design\BC01\Project\repo\CentuDY\CentuDY\obj\Debug\CentuDY.csprojAssemblyReference.cache
 E:\Videos\Kuliah\Semester 4\Pattern Software Design\BC01\Project\repo\CentuDY\CentuDY\obj\Debug\CentuDY.csproj.CoreCompileInputs.cache
 E:\Videos\Kuliah\Semester 4\Pattern Software Design\BC01\Project\repo\CentuDY\CentuDY\bin\CentuDY.dll.config
@@ -63,64 +61,5 @@ E:\Videos\Kuliah\Semester 4\Pattern Software Design\BC01\Project\repo\CentuDY\Ce
 E:\Videos\Kuliah\Semester 4\Pattern Software Design\BC01\Project\repo\CentuDY\CentuDY\bin\roslyn\vbc.rsp
 E:\Videos\Kuliah\Semester 4\Pattern Software Design\BC01\Project\repo\CentuDY\CentuDY\bin\roslyn\VBCSCompiler.exe
 E:\Videos\Kuliah\Semester 4\Pattern Software Design\BC01\Project\repo\CentuDY\CentuDY\bin\roslyn\VBCSCompiler.exe.config
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\CentuDY.dll.config
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\CentuDY.dll
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\CentuDY.pdb
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\roslyn\csc.exe
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\roslyn\csc.exe.config
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\roslyn\csc.rsp
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\roslyn\csi.exe
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\roslyn\csi.exe.config
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\roslyn\csi.rsp
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\roslyn\Microsoft.CodeAnalysis.dll
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\roslyn\Microsoft.CSharp.Core.targets
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\roslyn\Microsoft.Managed.Core.targets
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\roslyn\Microsoft.VisualBasic.Core.targets
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\roslyn\Microsoft.Win32.Primitives.dll
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\roslyn\System.AppContext.dll
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\roslyn\System.Collections.Immutable.dll
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\roslyn\System.Console.dll
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\roslyn\System.Diagnostics.StackTrace.dll
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\roslyn\System.Globalization.Calendars.dll
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\roslyn\System.IO.Compression.dll
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\roslyn\System.IO.Compression.ZipFile.dll
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\roslyn\System.IO.FileSystem.dll
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\roslyn\System.IO.FileSystem.Primitives.dll
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\roslyn\System.Net.Http.dll
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\roslyn\System.Net.Sockets.dll
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\roslyn\System.Reflection.Metadata.dll
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\roslyn\System.Security.Cryptography.Algorithms.dll
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\roslyn\System.Security.Cryptography.Encoding.dll
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\roslyn\System.Security.Cryptography.Primitives.dll
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\roslyn\System.Text.Encoding.CodePages.dll
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\roslyn\System.Threading.Tasks.Extensions.dll
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\roslyn\System.ValueTuple.dll
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\roslyn\System.Xml.ReaderWriter.dll
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\roslyn\System.Xml.XmlDocument.dll
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\roslyn\System.Xml.XPath.dll
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\roslyn\System.Xml.XPath.XDocument.dll
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\roslyn\vbc.exe
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\roslyn\vbc.exe.config
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\roslyn\vbc.rsp
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\roslyn\VBCSCompiler.exe
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\roslyn\VBCSCompiler.exe.config
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\EntityFramework.dll
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\EntityFramework.SqlServer.dll
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\EntityFramework.xml
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\EntityFramework.SqlServer.xml
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\obj\Debug\CentuDY.csproj.CopyComplete
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\obj\Debug\CentuDY.dll
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\obj\Debug\CentuDY.pdb
+D:\Program Files (x86)\Repos\CentuDY\CentuDY\obj\Debug\CentuDY.csprojAssemblyReference.cache
+D:\Program Files (x86)\Repos\CentuDY\CentuDY\obj\Debug\CentuDY.csproj.CoreCompileInputs.cache

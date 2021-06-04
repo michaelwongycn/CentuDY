@@ -28,7 +28,6 @@ namespace CentuDY.Controller
 
             else { return "User not found"; }
         }
-
         public static string UpdateUserPassword(string username, string oldPassword, string newPassword, string confirmPassword)
         {
             if (oldPassword == "") { return "Old password must be filled"; }
@@ -44,6 +43,15 @@ namespace CentuDY.Controller
             if (result) { return "Change Password Success"; }
 
             else { return "User not found"; }
+        }
+        public static List<User> GetUsers() {
+            return UserHandler.GetUsers();
+        }
+        public static Boolean DeleteUser(int userId) {
+            return UserHandler.DeleteUser(userId);
+        }
+        public static User GetUserById(int userId) {
+            return UserHandler.GetUserById(userId);
         }
     }
 }

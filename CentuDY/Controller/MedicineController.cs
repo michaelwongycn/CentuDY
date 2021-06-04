@@ -10,7 +10,7 @@ namespace CentuDY.Controller
 {
     public class MedicineController
     {
-        public static string InsertMedicine(string name, string description, string strStock, string strPrice)
+        public static string AddMedicine(string name, string description, string strStock, string strPrice)
         {
             if (name == "") { return "Name must be filled"; }
             if (description == "") { return "Description must be filled"; }
@@ -34,7 +34,7 @@ namespace CentuDY.Controller
 
             return "Insert Success";
         }
-        public static string updateMedicine(int medicineId, string newName, string newDescription, string strStock, string strPrice)
+        public static string UpdateMedicine(int medicineId, string newName, string newDescription, string strStock, string strPrice)
         {
             if (newName == "") { return "Name must be filled"; }
             if (newDescription == "") { return "Description must be filled"; }
@@ -58,6 +58,18 @@ namespace CentuDY.Controller
             if (result) { return "Update Success"; }
 
             else { return "Medicine not found"; }
+        }
+        public static List<Medicine> GetRandomMedicines() {
+            return MedicineHandler.GetRandomMedicines();
+        }
+        public static List<Medicine> GetMedicines() {
+            return MedicineHandler.GetMedicines();
+        }
+        public static List<Medicine> GetMedicineByKeyword(string keyword) {
+            return MedicineHandler.GetMedicineByKeyword(keyword);
+        }
+        public static Boolean DeleteMedicine(int medicineId) {
+            return MedicineHandler.DeleteMedicine(medicineId);
         }
     }
 }

@@ -126,3 +126,20 @@ D:\Project_PSD\CentuDY\CentuDY\obj\Debug\CentuDY.csproj.CopyComplete
 D:\Project_PSD\CentuDY\CentuDY\obj\Debug\CentuDY.dll
 D:\Project_PSD\CentuDY\CentuDY\obj\Debug\CentuDY.pdb
 D:\Project_PSD\CentuDY\CentuDY\obj\Debug\CentuDY.csproj.AssemblyReference.cache
+E:\Videos\Kuliah\Semester 4\Pattern Software Design\BC01\Project\repo\CentuDY\CentuDY\bin\CrystalDecisions.CrystalReports.Engine.dll
+E:\Videos\Kuliah\Semester 4\Pattern Software Design\BC01\Project\repo\CentuDY\CentuDY\bin\CrystalDecisions.ReportSource.dll
+E:\Videos\Kuliah\Semester 4\Pattern Software Design\BC01\Project\repo\CentuDY\CentuDY\bin\CrystalDecisions.Shared.dll
+E:\Videos\Kuliah\Semester 4\Pattern Software Design\BC01\Project\repo\CentuDY\CentuDY\bin\CrystalDecisions.ReportAppServer.DataDefModel.dll
+E:\Videos\Kuliah\Semester 4\Pattern Software Design\BC01\Project\repo\CentuDY\CentuDY\bin\CrystalDecisions.ReportAppServer.ClientDoc.dll
+E:\Videos\Kuliah\Semester 4\Pattern Software Design\BC01\Project\repo\CentuDY\CentuDY\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+E:\Videos\Kuliah\Semester 4\Pattern Software Design\BC01\Project\repo\CentuDY\CentuDY\bin\CrystalDecisions.ReportAppServer.Controllers.dll
+E:\Videos\Kuliah\Semester 4\Pattern Software Design\BC01\Project\repo\CentuDY\CentuDY\bin\CrystalDecisions.ReportAppServer.CommLayer.dll
+E:\Videos\Kuliah\Semester 4\Pattern Software Design\BC01\Project\repo\CentuDY\CentuDY\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+E:\Videos\Kuliah\Semester 4\Pattern Software Design\BC01\Project\repo\CentuDY\CentuDY\bin\CrystalDecisions.ReportAppServer.Prompting.dll
+E:\Videos\Kuliah\Semester 4\Pattern Software Design\BC01\Project\repo\CentuDY\CentuDY\bin\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+E:\Videos\Kuliah\Semester 4\Pattern Software Design\BC01\Project\repo\CentuDY\CentuDY\bin\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+E:\Videos\Kuliah\Semester 4\Pattern Software Design\BC01\Project\repo\CentuDY\CentuDY\bin\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+E:\Videos\Kuliah\Semester 4\Pattern Software Design\BC01\Project\repo\CentuDY\CentuDY\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+E:\Videos\Kuliah\Semester 4\Pattern Software Design\BC01\Project\repo\CentuDY\CentuDY\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
+E:\Videos\Kuliah\Semester 4\Pattern Software Design\BC01\Project\repo\CentuDY\CentuDY\bin\stdole.dll
+E:\Videos\Kuliah\Semester 4\Pattern Software Design\BC01\Project\repo\CentuDY\CentuDY\bin\CrystalDecisions.Web.dll

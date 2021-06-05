@@ -33,15 +33,6 @@ namespace CentuDY.View
         protected global::System.Web.UI.WebControls.TextBox inputEmail;
 
         /// <summary>
-        /// errMsgEmail control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label errMsgEmail;
-
-        /// <summary>
         /// inputPassword control.
         /// </summary>
         /// <remarks>
@@ -51,15 +42,6 @@ namespace CentuDY.View
         protected global::System.Web.UI.WebControls.TextBox inputPassword;
 
         /// <summary>
-        /// errMsgPassword control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label errMsgPassword;
-
-        /// <summary>
         /// chckRememberMe control.
         /// </summary>
         /// <remarks>
@@ -67,6 +49,15 @@ namespace CentuDY.View
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chckRememberMe;
+
+        /// <summary>
+        /// lblMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMessage;
 
         /// <summary>
         /// btnLogin control.

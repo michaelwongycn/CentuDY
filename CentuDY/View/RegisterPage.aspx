@@ -31,40 +31,42 @@
             <div class="form-regis">
                 <asp:Label runat="server" Text="Username"></asp:Label><br />
                 <asp:TextBox ID="inputUsername" runat="server"></asp:TextBox><br />
-                <asp:Label ID="errMsgUsername" runat="server" Text=""></asp:Label><br />
+                 
                 <br />
 
                 <asp:Label runat="server" Text="Password"></asp:Label><br />
                 <asp:TextBox ID="inputPassword" runat="server"></asp:TextBox><br />
-                <asp:Label ID="errMsgPassword" runat="server" Text=""></asp:Label><br />
+                
                 <br />
 
                 <asp:Label runat="server" Text="Confirm Password"></asp:Label><br />
                 <asp:TextBox ID="inputConfPassword" runat="server"></asp:TextBox><br />
-                <asp:Label runat="server" Text=""></asp:Label><br />
+                 
                 <br />
 
                 <asp:Label runat="server" Text="Name"></asp:Label><br />
                 <asp:TextBox ID="inputName" runat="server"></asp:TextBox><br />
-                <asp:Label runat="server" Text=""></asp:Label><br />
+                
                 <br />
 
                 <asp:Label runat="server" Text="Gender"></asp:Label><br />
                 <asp:DropDownList ID="genderDropDown" runat="server"></asp:DropDownList><br />
-                <asp:Label ID="errMsgGender" runat="server" Text=""></asp:Label><br />
+                 
                 <br />
 
                 <asp:Label runat="server" Text="Phone Number"></asp:Label><br />
-                <asp:TextBox ID="inputPhoneNumber" runat="server"></asp:TextBox><br />
-                <asp:Label ID="errMsgPhoneNumber" runat="server" Text=""></asp:Label><br />
+                <asp:TextBox ID="inputPhoneNumber" TextMode="Number" runat="server"></asp:TextBox><br />
+                 
                 <br />
 
                 <asp:Label runat="server" Text="Address"></asp:Label><br />
-                <textarea id="inputAddress" cols="22" rows="4"></textarea>
-                <asp:Label ID="errMsgAddress" runat="server" Text=""></asp:Label><br />
-                <br />
+                <asp:TextBox ID="inputAddress" runat="server"></asp:TextBox>
+                
 
-                <asp:Button ID="btnRegister" Text="Register" runat="server" />
+                <br />
+                <br />
+                <asp:Label ID="lblmessage" Visible="false" runat="server" Text="Label"></asp:Label><br />
+                <asp:Button ID="btnRegister" OnClick="btnRegister_Click" runat="server" Text="Register" />
             </div>
     </form>
     </div>

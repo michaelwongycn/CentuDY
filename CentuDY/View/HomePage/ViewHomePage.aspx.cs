@@ -1,4 +1,8 @@
-﻿using System;
+﻿using CentuDY.Controller;
+using CentuDY.Handler;
+using CentuDY.Model;
+using CentuDY.Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,9 +13,10 @@ namespace CentuDY.View.HomePage
 {
     public partial class ViewHomePage : System.Web.UI.Page
     {
+        protected static List<Role> roles = new List<Role>();
         protected void Page_Load(object sender, EventArgs e)
-        {
-
+        {      
+            checkRole();
         }
 
         protected void BtnViewCart_Click(object sender, EventArgs e)
@@ -39,5 +44,22 @@ namespace CentuDY.View.HomePage
             Response.Redirect("~/View/ViewTransReport.aspx");
         }
 
+        private void checkRole()
+        {
+           int roleId = ((Model.User)Session["user"]).RoleId;
+   
+           if(roleId==1)
+            {
+                BtnInsertMedicine.Visible = true;
+                BtnViewUsers.Visible = true;
+                BtnViewTransReport.Visible = true;
+            }
+           else if(roleId==2)
+            {
+                BtnViewCart.Visible = true;
+                BtnViewTransHistory.Visible = true;
+            }
+               
+        }
     }
 }

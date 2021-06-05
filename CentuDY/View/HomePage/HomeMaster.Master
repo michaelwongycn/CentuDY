@@ -12,7 +12,8 @@
     <form id="form1" runat="server">
         <div>
             <div class="UserName">
-                Username - Role
+                Welcome
+                <asp:Label ID="UserNameTxt" runat="server" Text="Label"></asp:Label>
             </div>
             <asp:Button ID="ViewMedicines" OnClick="ViewMedicines_Click" runat="server" Text="View Medicines" />
             <asp:Button ID="BtnViewProfile" OnClick="BtnViewProfile_Click" runat="server" Text="View Profile" />

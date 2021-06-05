@@ -33,15 +33,6 @@ namespace CentuDY.View
         protected global::System.Web.UI.WebControls.TextBox inputUsername;
 
         /// <summary>
-        /// errMsgUsername control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label errMsgUsername;
-
-        /// <summary>
         /// inputPassword control.
         /// </summary>
         /// <remarks>
@@ -49,15 +40,6 @@ namespace CentuDY.View
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox inputPassword;
-
-        /// <summary>
-        /// errMsgPassword control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label errMsgPassword;
 
         /// <summary>
         /// inputConfPassword control.
@@ -87,15 +69,6 @@ namespace CentuDY.View
         protected global::System.Web.UI.WebControls.DropDownList genderDropDown;
 
         /// <summary>
-        /// errMsgGender control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label errMsgGender;
-
-        /// <summary>
         /// inputPhoneNumber control.
         /// </summary>
         /// <remarks>
@@ -105,22 +78,22 @@ namespace CentuDY.View
         protected global::System.Web.UI.WebControls.TextBox inputPhoneNumber;
 
         /// <summary>
-        /// errMsgPhoneNumber control.
+        /// inputAddress control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label errMsgPhoneNumber;
+        protected global::System.Web.UI.WebControls.TextBox inputAddress;
 
         /// <summary>
-        /// errMsgAddress control.
+        /// lblmessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label errMsgAddress;
+        protected global::System.Web.UI.WebControls.Label lblmessage;
 
         /// <summary>
         /// btnRegister control.

@@ -1,4 +1,9 @@
-﻿using System;
+﻿using CentuDY.Controller;
+using CentuDY.Factory;
+using CentuDY.Handler;
+using CentuDY.Model;
+using CentuDY.Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -22,6 +27,29 @@ namespace CentuDY.View
             genderDropDown.Items.Add("Select gender");
             genderDropDown.Items.Add("Male");
             genderDropDown.Items.Add("Female");
+        }
+
+        protected void btnRegister_Click(object sender, EventArgs e)
+        {
+            string username = inputUsername.Text;
+            string password = inputPassword.Text;
+            string confrimPassword = inputConfPassword.Text;
+            string name = inputName.Text;
+            string gender = genderDropDown.Text;
+            string phone = inputPhoneNumber.Text;
+            string address = inputAddress.Text;
+
+            if(username == "" || password == ""|| confrimPassword == ""|| name == ""|| gender == ""|| phone == ""|| address == "")
+            {
+               lblmessage.Text = AuthController.Register(username, password, confrimPassword, name, gender, phone, address);
+                lblmessage.Visible = true;
+            }
+            else
+            {
+                UserHandler.AddUser(username, password, name, gender, phone, address);
+                Response.Redirect("~/View/LoginPage.aspx");
+            }
+
         }
     }
 }

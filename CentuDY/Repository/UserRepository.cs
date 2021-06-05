@@ -16,7 +16,7 @@ namespace CentuDY.Repository {
                     where user.UserId.Equals(userId)
                     select user).FirstOrDefault();
         }
-
+   
         public static User GetUserByUsername(string username) {
             CentuDYDBEntities db = new CentuDYDBEntities();
             return (from user

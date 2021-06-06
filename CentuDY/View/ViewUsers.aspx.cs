@@ -16,6 +16,7 @@ namespace CentuDY.View
         List<User> user;
         protected void Page_Load(object sender, EventArgs e)
         {
+            checkUser();
             Load_Grid();
         }
         private void checkUser()

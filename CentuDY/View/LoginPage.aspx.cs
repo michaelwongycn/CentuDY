@@ -13,6 +13,7 @@ namespace CentuDY.View
 {
     public partial class LoginPage : System.Web.UI.Page
     {
+        List<User> user;
         protected void Page_Load(object sender, EventArgs e)
         {
             checkUser();
@@ -38,9 +39,9 @@ namespace CentuDY.View
         {
             string email = inputEmail.Text;
             string password = inputPassword.Text;
-            
-            User user = UserHandler.GetUserByUsernameAndPassword(email, password);
-            AuthController.Login(email,password);
+
+            var user = AuthController.Login(email, password); 
+
             if (user != null)
             {
                 Session["user"] = user;

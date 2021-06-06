@@ -12,25 +12,26 @@ namespace CentuDY.View.ProfilePage
 {
     public partial class UpdateProfile : System.Web.UI.Page
     {
-        static User user;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                setGenderDropDown();
-            }
+            checkUser();
         }
-        public void setGenderDropDown()
+        private void checkUser()
         {
-            genderDropDown.Items.Add("Select gender");
-            genderDropDown.Items.Add("Male");
-            genderDropDown.Items.Add("Female");
+            if (Session["user"] == null)
+            {
+                if (Request.Cookies["username"] == null)
+                {
+                    Response.Redirect("~/View/LoginPage.aspx");
+                }
+            }
         }
         protected void BtnUpdateProfile_Click(object sender, EventArgs e)
         {
             int userId = ((Model.User)Session["user"]).UserId;
             string name = NameTxt.Text;
-            string gender = genderDropDown.Text;
+            string gender = genderDropDown.SelectedItem.ToString();
             string phoneNumber = PhoneTxt.Text;
             string address = AddressTxt.Text;
             

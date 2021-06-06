@@ -42,7 +42,7 @@ namespace CentuDY.View
             if(username == "" || password == ""|| confrimPassword == ""|| name == ""|| gender == ""|| phone == ""|| address == "")
             {
                lblmessage.Text = AuthController.Register(username, password, confrimPassword, name, gender, phone, address);
-                lblmessage.Visible = true;
+               lblmessage.Visible = true;
             }
             else
             {

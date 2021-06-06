@@ -14,6 +14,7 @@ namespace CentuDY.View.HomePage
     public partial class ViewHomePage : System.Web.UI.Page
     {
         protected static List<Role> roles = new List<Role>();
+        int UserID;
         protected void Page_Load(object sender, EventArgs e)
         {      
             checkRole();
@@ -59,7 +60,6 @@ namespace CentuDY.View.HomePage
                 BtnViewCart.Visible = true;
                 BtnViewTransHistory.Visible = true;
             }
-               
         }
     }
 }

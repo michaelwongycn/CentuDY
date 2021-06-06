@@ -27,6 +27,8 @@
             <asp:TextBox ID="inputQuantity" runat="server" />
             <br />
 
+            <asp:Button ID="btnAddToCart" Text="Add to Cart" runat="server" OnClick="btnAddToCart_Click" />
+            
         </div>
     </form>
 </body>

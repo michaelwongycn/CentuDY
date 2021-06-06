@@ -61,6 +61,10 @@ namespace CentuDY.Controller
         public static List<Medicine> GetMedicines() {
             return MedicineHandler.GetMedicines();
         }
+        public static Medicine GetMedicineById(int medicineId) {
+            return MedicineHandler.GetMedicineById(medicineId);
+        }
+
         public static List<Medicine> GetMedicineByKeyword(string keyword) {
             return MedicineHandler.GetMedicineByKeyword(keyword);
         }

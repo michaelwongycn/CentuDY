@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LoginPage.aspx.cs" Inherits="CentuDY.View.LoginPage" %>
+﻿    <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LoginPage.aspx.cs" Inherits="CentuDY.View.LoginPage" %>
 
 <!DOCTYPE html>
 
@@ -34,10 +34,7 @@
                 <asp:Button ID="btnLogin" OnClick="btnLogin_Click" Text="Login" runat="server" /> <br />
                 <br />
                 <asp:HyperLink ID="register" NavigateUrl="RegisterPage.aspx" Text="Register" runat="server" />
-
             </div>
-            
-            
         </div>
     </form>
 </body>

@@ -1,4 +1,5 @@
-﻿using CentuDY.Model;
+﻿using CentuDY.Factory;
+using CentuDY.Model;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -41,7 +42,11 @@ namespace CentuDY.Repository {
                                 where cart.UserId.Equals(userId) && cart.MedicineId.Equals(medicineId)
                                 select cart).FirstOrDefault();
 
-            changedCart.Quantity = changedCart.Quantity + quantity;
+            int newQuantity = changedCart.Quantity + quantity;
+            Cart newCart = CartFactory.CreateCart(userId, medicineId, quantity);
+
+            db.Cart.Remove(changedCart);
+            db.Cart.Add(newCart);
             db.SaveChanges();
         }
 

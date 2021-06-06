@@ -1,4 +1,5 @@
-﻿using CentuDY.Model;
+﻿using CentuDY.Controller;
+using CentuDY.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,13 +15,26 @@ namespace CentuDY.View
         static User user;
         protected void Page_Load(object sender, EventArgs e)
         {
-            UserNameTxt.Text = ((Model.User)Session["user"]).Username;
-            NameTxt.Text = ((Model.User)Session["user"]).Name;
-            GenderTxt.Text = ((Model.User)Session["user"]).Gender;
-            PhoneTxt.Text = ((Model.User)Session["user"]).PhoneNumber;
-            AddressTxt.Text = ((Model.User)Session["user"]).Address;
+            checkUser();
+
+            int id = ((Model.User)Session["user"]).UserId;
+            user = UserController.GetUserById(id);
+            UserNameTxt.Text = user.Username;
+            NameTxt.Text = user.Name;
+            GenderTxt.Text = user.Gender;
+            PhoneTxt.Text = user.PhoneNumber;
+            AddressTxt.Text = user.Address;
         }
-        
+        private void checkUser()
+        {
+            if (Session["user"] == null)
+            {
+                if (Request.Cookies["username"] == null)
+                {
+                    Response.Redirect("~/View/LoginPage.aspx");
+                }
+            }
+        }
         protected void BtnUpdateProfile_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/View/ProfilePage/UpdateProfile.aspx");

@@ -16,17 +16,15 @@ namespace CentuDY.View
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                setGenderDropDown();
-            }
+            checkUser();
         }
 
-        public void setGenderDropDown()
+        private void checkUser()
         {
-            genderDropDown.Items.Add("Select gender");
-            genderDropDown.Items.Add("Male");
-            genderDropDown.Items.Add("Female");
+            if (Session["user"] != null)
+            {
+                 Response.Redirect("~/View/ViewHomePage.aspx");
+            }
         }
 
         protected void btnRegister_Click(object sender, EventArgs e)
@@ -35,7 +33,7 @@ namespace CentuDY.View
             string password = inputPassword.Text;
             string confrimPassword = inputConfPassword.Text;
             string name = inputName.Text;
-            string gender = genderDropDown.Text;
+            string gender = genderDropDown.SelectedItem.ToString();
             string phone = inputPhoneNumber.Text;
             string address = inputAddress.Text;
 
@@ -46,7 +44,8 @@ namespace CentuDY.View
             }
             else
             {
-                UserHandler.AddUser(username, password, name, gender, phone, address);
+                lblmessage.Text = AuthController.Register(username, password, confrimPassword, name, gender, phone, address);
+                lblmessage.Visible = true;
                 Response.Redirect("~/View/LoginPage.aspx");
             }
 

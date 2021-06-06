@@ -16,10 +16,11 @@ namespace CentuDY.View.MedicinePage
         static Medicine medicine;
         protected void Page_Load(object sender, EventArgs e)
         {
+            checkUser();
             if (!Page.IsPostBack)
             {
                 int id = int.Parse(Request.QueryString["id"]);
-                medicine = MedicineHandler.GetMedicineById(id);
+                medicine = MedicineController.GetMedicineById(id);
                 if(medicine == null)
                 {
                     Response.Redirect("~/View/ViewMedicine.aspx");
@@ -29,12 +30,29 @@ namespace CentuDY.View.MedicinePage
                     NameTxt.Text = medicine.Name;
                     DescTxt.Text = medicine.Description;
                     StockTxt.Text = medicine.Stock.ToString();
-                    PriceTxt.Text = medicine.Price.ToString();
-                    
+                    PriceTxt.Text = medicine.Price.ToString();        
                 }
             }
         }
 
+        private void checkUser()
+        {
+            if (Session["user"] == null)
+            {
+                if (Request.Cookies["username"] == null)
+                {
+                    Response.Redirect("~/View/LoginPage.aspx");
+                }
+            }
+            else
+            {
+                int roleId = ((Model.User)Session["user"]).RoleId;
+                if (roleId == 2)
+                {
+                    Response.Redirect("~/View/ViewHomePage.aspx");
+                }
+            }
+        }
         protected void BtnUpdate_Click(object sender, EventArgs e)
         {
             string name = NameTxt.Text;

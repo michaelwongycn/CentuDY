@@ -12,9 +12,19 @@ namespace CentuDY.View.ProfilePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            checkUser();
         }
 
+        private void checkUser()
+        {
+            if (Session["user"] == null)
+            {
+                if (Request.Cookies["username"] == null)
+                {
+                    Response.Redirect("~/View/LoginPage.aspx");
+                }
+            }
+        }
         protected void BtnChangePassword_Click(object sender, EventArgs e)
         {
             string username = ((Model.User)Session["user"]).Username;

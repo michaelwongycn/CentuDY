@@ -50,7 +50,11 @@
                 <br />
 
                 <asp:Label runat="server" Text="Gender"></asp:Label><br />
-                <asp:DropDownList ID="genderDropDown" runat="server"></asp:DropDownList><br />
+                <asp:DropDownList ID="genderDropDown" runat="server">
+                 <asp:ListItem Enabled="true" Text="Select gender" Value="-1"></asp:ListItem>
+                <asp:ListItem Text="Male" Value="1"></asp:ListItem>
+                <asp:ListItem Text="Female" Value="2"></asp:ListItem>
+                </asp:DropDownList><br />
                  
                 <br />
 

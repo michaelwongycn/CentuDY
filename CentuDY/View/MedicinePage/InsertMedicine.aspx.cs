@@ -14,9 +14,27 @@ namespace CentuDY.View.MedicinePage
         static string name;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            checkUser();
         }
 
+        private void checkUser()
+        {
+            if (Session["user"] == null)
+            {
+                if (Request.Cookies["username"] == null)
+                {
+                    Response.Redirect("~/View/LoginPage.aspx");
+                }
+            }
+            else
+            {
+                int roleId = ((Model.User)Session["user"]).RoleId;
+                if(roleId == 2)
+                {
+                    Response.Redirect("~/View/ViewHomePage.aspx");
+                }
+            }
+        }
         protected void BtnInsert_Click(object sender, EventArgs e)
         {
             name = NameTxt.Text;

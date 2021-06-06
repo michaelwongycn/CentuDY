@@ -18,9 +18,20 @@ namespace CentuDY.View
         {
             Load_Grid();
         }
+        private void checkUser()
+        {
+            if (Session["user"] == null)
+            {
+                if (Request.Cookies["username"] == null)
+                {
+                    Response.Redirect("~/View/LoginPage.aspx");
+                }
+            }
+        }
+
         protected void Load_Grid()
         {
-            user = UserHandler.GetUsers();
+            user = UserController.GetUsers();
            
             Grid_View_Medicine.DataSource = user;
             Grid_View_Medicine.DataBind();

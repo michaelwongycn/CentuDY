@@ -12,7 +12,11 @@
             <asp:Label ID="LblName" runat="server" Text="Name:"></asp:Label>
             <asp:TextBox ID="NameTxt" runat="server" Text=""></asp:TextBox><br />
             <asp:Label ID="LblGender" runat="server" Text="Gender:"></asp:Label>
-            <asp:DropDownList ID="genderDropDown" runat="server"></asp:DropDownList><br />
+            <asp:DropDownList ID="genderDropDown" runat="server">
+                 <asp:ListItem Enabled="true" Text="Select gender" Value="-1"></asp:ListItem>
+            <asp:ListItem Text="Male" Value="1"></asp:ListItem>
+            <asp:ListItem Text="Female" Value="2"></asp:ListItem>
+            </asp:DropDownList><br />
             <asp:Label ID="LblPhone" runat="server" Text="Phone Number:"></asp:Label>
             <asp:TextBox ID="PhoneTxt" runat="server" Text=""></asp:TextBox><br />
             <asp:Label ID="LblAddress" runat="server" Text="Address:"></asp:Label>

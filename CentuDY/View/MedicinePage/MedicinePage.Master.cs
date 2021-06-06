@@ -16,7 +16,7 @@ namespace CentuDY.View.MedicinePage
 
         protected void BtnHomePage_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/View/HomePage/viewHomePage.aspx");
+            Response.Redirect("~/View/viewHomePage.aspx");
         }
 
         protected void ViewMedicines_Click(object sender, EventArgs e)

@@ -15,7 +15,8 @@
     <AssemblyName>CentuDY</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
-    <Use64BitIISExpress />
+    <Use64BitIISExpress>
+    </Use64BitIISExpress>
     <IISExpressSSLPort>44377</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -98,6 +99,7 @@
     <Content Include="View\ProfilePage\UpdateProfile.aspx" />
     <Content Include="View\RegisterPage.aspx" />
     <Content Include="View\ViewCart.aspx" />
+    <Content Include="View\ViewHomePage.aspx" />
     <Content Include="View\ViewMedicine.aspx" />
     <Content Include="View\ViewProfilePage.aspx" />
     <Content Include="View\ViewTransHistory.aspx" />
@@ -247,6 +249,13 @@
     </Compile>
     <Compile Include="View\ViewCart.aspx.designer.cs">
       <DependentUpon>ViewCart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\ViewHomePage.aspx.cs">
+      <DependentUpon>ViewHomePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ViewHomePage.aspx.designer.cs">
+      <DependentUpon>ViewHomePage.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\ViewMedicine.aspx.cs">
       <DependentUpon>ViewMedicine.aspx</DependentUpon>

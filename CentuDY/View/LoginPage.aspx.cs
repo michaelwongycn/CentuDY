@@ -15,23 +15,32 @@ namespace CentuDY.View
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           if(!IsPostBack)
+            checkUser();
+           if (!IsPostBack)
             {   
                 if (Request.Cookies["username"] != null && Request.Cookies["password"] != null )
                 {
                     inputEmail.Text = Request.Cookies["username"].Value;
                     inputPassword.Attributes.Add("value", Request.Cookies["password"].Value);
+                    
                 }
             }
         }
 
+        private void checkUser()
+        {
+            if (Session["user"] != null)
+            {
+                Response.Redirect("~/View/ViewHomePage.aspx");
+            }
+        }
         protected void btnLogin_Click(object sender, EventArgs e)
         {
             string email = inputEmail.Text;
             string password = inputPassword.Text;
             
             User user = UserHandler.GetUserByUsernameAndPassword(email, password);
-
+            AuthController.Login(email,password);
             if (user != null)
             {
                 Session["user"] = user;
@@ -50,11 +59,16 @@ namespace CentuDY.View
                     Response.Cookies.Add(cookie);
                 }
 
-                Response.Redirect("~/View/HomePage/ViewHomePage.aspx");
+                
+                Response.Redirect("~/View/ViewHomePage.aspx");
+            }
+            else
+            {
+                lblMessage.Text = AuthController.Login(email, password);
+                lblMessage.Visible = true;
             }
 
-            lblMessage.Text = AuthController.Login(email, password);
-            lblMessage.Visible = true;
+           
         }
 
     }

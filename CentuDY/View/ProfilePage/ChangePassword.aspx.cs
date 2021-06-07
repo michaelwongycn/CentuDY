@@ -29,18 +29,12 @@ namespace CentuDY.View.ProfilePage
             string newPassword = NewPasswordTxt.Text;
             string confrimPassword = ConfirmPasswordTxt.Text;
 
-            var result = UserController.UpdateUserPassword(username, oldPassword, newPassword, confrimPassword);
-            if(result == "Change Password Success")
+            string result = UserController.UpdateUserPassword(username, oldPassword, newPassword, confrimPassword);
+            lblMessage.Text = result;
+            lblMessage.Visible = true;
+            if (result == "Change Password Success")
             {
-                lblMessage.Text = result;
-                lblMessage.Visible = true;
                 BtnChangePassword.Visible = false;
-                BtnBackHome.Visible = true;
-            }
-            if (result.GetType().Equals(typeof(string)))
-            {
-                lblMessage.Text = result;
-                lblMessage.Visible = true;
             }
         }
 

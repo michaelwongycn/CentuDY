@@ -41,15 +41,18 @@ namespace CentuDY.View
 
         protected void btnAddToCart_Click(object sender, EventArgs e)
         {
-            var result =  CartController.AddCart(UserId, MedicineId, GetQuantity());
+            string result =  CartController.AddCart(UserId, MedicineId, GetQuantity());
+            txtAlert.Text = result;
             if (result == "Add to cart success")
             {
-                Response.Redirect("~/View/ViewCart.aspx?id=" + UserId);
+                btnAddToCart.Visible = false;
+                BtnViewCart.Visible = true;
             }
-            if (result.GetType().Equals(typeof(string)))
-            {
-                txtAlert.Text = result;
-            }
+        }
+
+        protected void BtnViewCart_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/View/ViewCart.aspx");
         }
     }
 }

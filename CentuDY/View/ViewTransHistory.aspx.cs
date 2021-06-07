@@ -16,16 +16,16 @@ namespace CentuDY.View
         protected List<DetailTransaction> details;
         protected List<DetailTransaction> dataTransaction = new List<DetailTransaction>();
 
-        int Userid;
+        
         protected void Page_Load(object sender, EventArgs e)
         {
-            Userid = int.Parse(Request.QueryString["Id"]);
-            Load_Grid(Userid);
+            Load_Grid();
         }
 
-        protected void Load_Grid(int id)
+        protected void Load_Grid()
         {
-            headers = HeaderTransactionController.GetHeaderTransactionsByUser(Userid);
+            int userId = ((Model.User)Session["user"]).UserId;
+            headers = HeaderTransactionController.GetHeaderTransactionsByUser(userId);
 
             foreach (HeaderTransaction ht in headers)
             {

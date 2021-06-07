@@ -37,20 +37,18 @@ namespace CentuDY.View
             string phone = inputPhoneNumber.Text;
             string address = inputAddress.Text;
 
-            var result = AuthController.Register(username, password, confrimPassword, name, gender, phone, address);
+            string result = AuthController.Register(username, password, confrimPassword, name, gender, phone, address);
+            lblmessage.Text = result;
+            lblmessage.Visible = true;
 
             if (result == "Register Success")
             {
                 lblmessage.Text = result;
                 lblmessage.Visible = true;
+
                 btnRegister.Visible = false;
-                btnBackLogin.Visible = true;
             }
-            if (result.GetType().Equals(typeof(string)))
-            {
-                lblmessage.Text = result;
-                lblmessage.Visible = true;
-            }
+            
         }
 
         protected void btnBackLogin_Click(object sender, EventArgs e)

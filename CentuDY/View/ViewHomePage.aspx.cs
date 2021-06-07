@@ -54,7 +54,7 @@ namespace CentuDY.View
 
         protected void BtnViewCart_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/View/ViewCart.aspx?id=" + ((Model.User)Session["user"]).UserId);
+            Response.Redirect("~/View/ViewCart.aspx" );
         }
 
         protected void BtnViewTransHistory_Click(object sender, EventArgs e)

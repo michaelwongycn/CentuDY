@@ -1,48 +1,51 @@
-﻿using System;
+﻿using CentuDY.Controller;
+using CentuDY.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using CentuDY.Model;
-using CentuDY.Controller;
 
 namespace CentuDY.View
 {
-    public partial class ViewCart : System.Web.UI.Page
+    public partial class ViewTransactionsHistory : System.Web.UI.Page
     {
-        List<Cart> carts;
-        int grandTotal = 0;
+        protected int grandTotal = 0;
+        protected List<HeaderTransaction> headers;
+        protected List<DetailTransaction> details;
+        protected List<DetailTransaction> dataTransaction = new List<DetailTransaction>();
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
             checkUser();
-            Load_Grid(); 
+            Load_Grid();
         }
 
         protected void Load_Grid()
         {
             int userId = ((Model.User)Session["user"]).UserId;
-            carts = CartController.GetCartByUser(userId);
-            System.Diagnostics.Debug.WriteLine(carts);
-            Grid_View_Cart.DataSource = carts;
-            Grid_View_Cart.DataBind();
-        }
+            headers = HeaderTransactionController.GetHeaderTransactionsByUser(userId);
 
-        protected void Grid_View_Cart_RowDeleting(object sender, GridViewDeleteEventArgs e)
-        {
-            Cart cr = carts[e.RowIndex];
-            CartController.DeleteCart(cr.UserId, cr.MedicineId);
-            Load_Grid();
+            foreach (HeaderTransaction ht in headers)
+            {
+                details = DetailTransactionController.GetDetailTransactionsByTransaction(ht.TransactionId);
+                foreach (DetailTransaction dt in details)
+                {
+                    dataTransaction.Add(dt);
+                }
+            }
+
+            Grid_View_Transaction_History.DataSource = dataTransaction;
+            Grid_View_Transaction_History.DataBind();
         }
 
         private void checkUser()
         {
             if (Session["user"] == null)
             {
-                if (Request.Cookies["username"] == null)
-                {
-                    Response.Redirect("~/View/Login.aspx");
-                }
+                Response.Redirect("~/View/Login.aspx");
             }
             else
             {
@@ -56,11 +59,11 @@ namespace CentuDY.View
 
             if (roleId == 1)
             {
-                 Response.Redirect("~/View/Home.aspx");
+                Response.Redirect("~/View/Home.aspx");
             }
         }
 
-        protected void Grid_View_Cart_RowDataBound(object sender, GridViewRowEventArgs e)
+        protected void Grid_View_Transaction_History_RowDataBound(object sender, GridViewRowEventArgs e)
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
@@ -71,11 +74,6 @@ namespace CentuDY.View
                 Label GrandTotal = (Label)e.Row.FindControl("txtGrandTotal");
                 GrandTotal.Text = grandTotal.ToString();
             }
-        }
-
-        protected void btnCheckout_Click(object sender, EventArgs e)
-        {
-            CartController.Checkout(carts.First().UserId);
         }
     }
 }

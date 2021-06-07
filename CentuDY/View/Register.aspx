@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RegisterPage.aspx.cs" Inherits="CentuDY.View.RegisterPage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="CentuDY.View.Register" %>
 
 <!DOCTYPE html>
 
@@ -59,7 +59,7 @@
                 <br />
 
                 <asp:Label runat="server" Text="Phone Number"></asp:Label><br />
-                <asp:TextBox ID="inputPhoneNumber" TextMode="Number" runat="server"></asp:TextBox><br />
+                <asp:TextBox ID="inputPhoneNumber" runat="server"></asp:TextBox><br />
                  
                 <br />
 
@@ -77,3 +77,4 @@
     </div>
 </body>
 </html>
+

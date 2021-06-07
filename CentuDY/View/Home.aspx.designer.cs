@@ -11,7 +11,7 @@ namespace CentuDY.View
 {
 
 
-    public partial class ViewHomePage
+    public partial class Home
     {
 
         /// <summary>

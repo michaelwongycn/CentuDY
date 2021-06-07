@@ -1,8 +1,4 @@
 ﻿using CentuDY.Controller;
-using CentuDY.Factory;
-using CentuDY.Handler;
-using CentuDY.Model;
-using CentuDY.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +8,7 @@ using System.Web.UI.WebControls;
 
 namespace CentuDY.View
 {
-    public partial class RegisterPage : System.Web.UI.Page
+    public partial class Register : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -23,7 +19,7 @@ namespace CentuDY.View
         {
             if (Session["user"] != null)
             {
-                 Response.Redirect("~/View/ViewHomePage.aspx");
+                Response.Redirect("~/View/Home.aspx");
             }
         }
 
@@ -43,17 +39,14 @@ namespace CentuDY.View
 
             if (result == "Register Success")
             {
-                lblmessage.Text = result;
-                lblmessage.Visible = true;
-
                 btnRegister.Visible = false;
             }
-            
+
         }
 
         protected void btnBackLogin_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/View/LoginPage.aspx");
+            Response.Redirect("~/View/Login.aspx");
         }
     }
 }

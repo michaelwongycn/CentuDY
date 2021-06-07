@@ -11,7 +11,7 @@ namespace CentuDY.View
 {
 
 
-    public partial class LoginPage
+    public partial class Register
     {
 
         /// <summary>
@@ -24,13 +24,13 @@ namespace CentuDY.View
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// inputEmail control.
+        /// inputUsername control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox inputEmail;
+        protected global::System.Web.UI.WebControls.TextBox inputUsername;
 
         /// <summary>
         /// inputPassword control.
@@ -42,39 +42,75 @@ namespace CentuDY.View
         protected global::System.Web.UI.WebControls.TextBox inputPassword;
 
         /// <summary>
-        /// chckRememberMe control.
+        /// inputConfPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chckRememberMe;
+        protected global::System.Web.UI.WebControls.TextBox inputConfPassword;
 
         /// <summary>
-        /// lblMessage control.
+        /// inputName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMessage;
+        protected global::System.Web.UI.WebControls.TextBox inputName;
 
         /// <summary>
-        /// btnLogin control.
+        /// genderDropDown control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnLogin;
+        protected global::System.Web.UI.WebControls.DropDownList genderDropDown;
 
         /// <summary>
-        /// register control.
+        /// inputPhoneNumber control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink register;
+        protected global::System.Web.UI.WebControls.TextBox inputPhoneNumber;
+
+        /// <summary>
+        /// inputAddress control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox inputAddress;
+
+        /// <summary>
+        /// lblmessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblmessage;
+
+        /// <summary>
+        /// btnRegister control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnRegister;
+
+        /// <summary>
+        /// btnBackLogin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnBackLogin;
     }
 }

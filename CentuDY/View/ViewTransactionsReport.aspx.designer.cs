@@ -11,16 +11,16 @@ namespace CentuDY.View
 {
 
 
-    public partial class ViewTransHistory
+    public partial class ViewTransactionsReport
     {
 
         /// <summary>
-        /// Grid_View_Transaction_History control.
+        /// TransactionCrystalReportViewer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView Grid_View_Transaction_History;
+        protected global::CrystalDecisions.Web.CrystalReportViewer TransactionCrystalReportViewer;
     }
 }

@@ -16,12 +16,12 @@ namespace CentuDY.View.MedicinePage
 
         protected void BtnHomePage_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/View/viewHomePage.aspx");
+            Response.Redirect("~/View/Home.aspx");
         }
 
         protected void ViewMedicines_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/View/ViewMedicine.aspx");
+            Response.Redirect("~/View/ViewMedicines.aspx");
         }
     }
 }

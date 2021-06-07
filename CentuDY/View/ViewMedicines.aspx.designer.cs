@@ -11,7 +11,7 @@ namespace CentuDY.View
 {
 
 
-    public partial class ViewMedicine
+    public partial class ViewMedicines
     {
 
         /// <summary>
@@ -51,12 +51,12 @@ namespace CentuDY.View
         protected global::System.Web.UI.WebControls.Button BtnInsertMedicine;
 
         /// <summary>
-        /// Grid_View_Medicine control.
+        /// Grid_View_Medicines control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView Grid_View_Medicine;
+        protected global::System.Web.UI.WebControls.GridView Grid_View_Medicines;
     }
 }

@@ -15,12 +15,12 @@ namespace CentuDY.View
     {
 
         /// <summary>
-        /// Grid_View_Medicine control.
+        /// Grid_View_Users control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView Grid_View_Medicine;
+        protected global::System.Web.UI.WebControls.GridView Grid_View_Users;
     }
 }

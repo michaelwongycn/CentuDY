@@ -11,7 +11,7 @@ namespace CentuDY.View
 {
 
 
-    public partial class ViewProfilePage
+    public partial class Profile
     {
 
         /// <summary>

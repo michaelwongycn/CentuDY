@@ -28,6 +28,14 @@ namespace CentuDY.View
                     Response.Redirect("~/View/LoginPage.aspx");
                 }
             }
+            else
+            {
+                int roleId = ((Model.User)Session["user"]).RoleId;
+                if (roleId == 2)
+                {
+                    Response.Redirect("~/View/ViewHomePage.aspx");
+                }
+            }
         }
 
         protected void Load_Grid()

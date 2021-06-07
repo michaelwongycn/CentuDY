@@ -43,7 +43,7 @@ namespace CentuDY.View
                 grandTotal = grandTotal + int.Parse(SubTotal.Text);
 
                 Label GrandTotal = (Label)e.Row.FindControl("txtGrandTotal");
-                GrandTotal.Text = GrandTotal.ToString();
+                GrandTotal.Text = grandTotal.ToString();
             }
         }
 

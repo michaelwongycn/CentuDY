@@ -25,13 +25,14 @@
             <asp:Button ID="BtnViewTransReport" OnClick="BtnViewTransReport_Click" Visible="false" runat="server" Text="View Transaction Report" />
             <br />
             <br />
-            <asp:GridView ID="Grid_View_Medicine" Visible="false" runat="server" AutoGenerateColumns="false" >
+            <asp:GridView ID="Grid_View_Medicine" Visible="false" runat="server" AutoGenerateColumns="false" OnRowCommand="Grid_View_Medicine_RowCommand" >
                 <Columns>
+                    <asp:BoundField DataField="MedicineId" HeaderText="Id" SortExpression="MedicineId" Visible="true" />
                     <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
                     <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="Description" />
                     <asp:BoundField DataField="Stock" HeaderText="Stock" SortExpression="Stock" />
                     <asp:BoundField DataField="Price" HeaderText="Price" SortExpression="Price" />
-                    <asp:CommandField ButtonType="Button" HeaderText="Action" NewText="Add to Cart"  ShowCancelButton="False" ShowInsertButton="true" ShowHeader="True" Visible="false" />
+                    <asp:ButtonField Text="Add to Cart" HeaderText="Action" CommandName="AddToCart" ButtonType="Button" Visible="true" ItemStyle-Font-Underline="false" />
                 </Columns>
             </asp:GridView>
         </div>

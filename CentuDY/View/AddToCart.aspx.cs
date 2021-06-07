@@ -15,6 +15,7 @@ namespace CentuDY.View
         int UserId;
         protected void Page_Load(object sender, EventArgs e)
         {
+            checkUser();
             LoadMedicineData();
             UserId = ((Model.User)Session["user"]).UserId;
         }
@@ -37,6 +38,31 @@ namespace CentuDY.View
         protected String GetQuantity()
         {
             return inputQuantity.Text;
+        }
+
+        private void checkUser()
+        {
+            if (Session["user"] == null)
+            {
+                if (Request.Cookies["username"] == null)
+                {
+                    Response.Redirect("~/View/LoginPage.aspx");
+                }
+            }
+            else
+            {
+                roleIsMember();
+            }
+        }
+
+        private void roleIsMember()
+        {
+            int roleId = ((Model.User)Session["user"]).RoleId;
+
+            if (roleId == 1)
+            {
+                Response.Redirect("~/View/HomePage.aspx");
+            }
         }
 
         protected void btnAddToCart_Click(object sender, EventArgs e)

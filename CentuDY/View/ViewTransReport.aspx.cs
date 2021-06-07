@@ -14,10 +14,36 @@ namespace CentuDY.View
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            checkUser();
             List<HeaderTransaction> dataSource = HeaderTransactionController.GetHeaderTransactions();
             TransactionCrystalReport cr = new TransactionCrystalReport();
             cr.SetDataSource(GetDataSet(dataSource));
             TransactionCrystalReportViewer.ReportSource = cr;
+        }
+
+        private void checkUser()
+        {
+            if (Session["user"] == null)
+            {
+                if (Request.Cookies["username"] == null)
+                {
+                    Response.Redirect("~/View/LoginPage.aspx");
+                }
+            }
+            else
+            {
+                roleIsAdmin();
+            }
+        }
+
+        private void roleIsAdmin()
+        {
+            int roleId = ((Model.User)Session["user"]).RoleId;
+
+            if (roleId == 2)
+            {
+                Response.Redirect("~/View/HomePage.aspx");
+            }
         }
 
         protected TransactionDataSet GetDataSet(List<HeaderTransaction> transactions)

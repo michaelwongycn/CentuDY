@@ -16,6 +16,7 @@ namespace CentuDY.View
         protected void Page_Load(object sender, EventArgs e)
         {
             Load_Grid();
+            checkUser();
         }
 
         protected void Load_Grid()
@@ -32,6 +33,31 @@ namespace CentuDY.View
             Cart cr = carts[e.RowIndex];
             CartController.DeleteCart(cr.UserId, cr.MedicineId);
             Load_Grid();
+        }
+
+        private void checkUser()
+        {
+            if (Session["user"] == null)
+            {
+                if (Request.Cookies["username"] == null)
+                {
+                    Response.Redirect("~/View/LoginPage.aspx");
+                }
+            }
+            else
+            {
+                roleIsMember();
+            }
+        }
+
+        private void roleIsMember()
+        {
+            int roleId = ((Model.User)Session["user"]).RoleId;
+
+            if (roleId == 1)
+            {
+                 Response.Redirect("~/View/HomePage.aspx");
+            }
         }
 
         protected void Grid_View_Cart_RowDataBound(object sender, GridViewRowEventArgs e)

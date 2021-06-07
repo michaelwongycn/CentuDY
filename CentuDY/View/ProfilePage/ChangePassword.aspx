@@ -17,7 +17,7 @@
             <asp:TextBox ID="ConfirmPasswordTxt" runat="server"></asp:TextBox><br />
             <asp:Label ID="lblMessage" Visible="false" runat="server" Text="Label"></asp:Label><br />
             <asp:Button ID="BtnChangePassword" Visible="true" OnClick="BtnChangePassword_Click" runat="server" Text="Change Password" />
-            <asp:Button ID="BtnBackHome" Visible="false" OnClick="BtnBackHome_Click" runat="server" Text="Back Profile" />
+            <asp:Button ID="BtnBackHome" Visible="true" OnClick="BtnBackHome_Click" runat="server" Text="Back Profile" />
         </div>
     </form>
 </body>

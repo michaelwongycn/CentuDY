@@ -26,11 +26,10 @@
             <asp:Label Text="Insert Quantity:" runat="server" />
             <asp:TextBox ID="inputQuantity" runat="server" />
             <br />
-
-            <asp:Button ID="btnAddToCart" Text="Add to Cart" runat="server" OnClick="btnAddToCart_Click" /><br />
+            <asp:Label ID="txtAlert" Text="" runat="server" /><br /> 
             <br />
-            <asp:Label ID="txtAlert" Text="" runat="server" />
-            
+            <asp:Button ID="btnAddToCart" Text="Add to Cart" runat="server" OnClick="btnAddToCart_Click" />
+            <asp:Button ID="BtnViewCart" Text="View Cart" Visible="false" runat="server" OnClick="BtnViewCart_Click" />
         </div>
     </form>
 </body>

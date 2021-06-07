@@ -2,6 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <br />
     Transaction History
     <asp:GridView ID="Grid_View_Transaction_History" runat="server" AutoGenerateColumns="false" OnRowDataBound="Grid_View_Transaction_History_RowDataBound">
         <Columns>

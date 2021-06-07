@@ -39,18 +39,9 @@ namespace CentuDY.View.MedicinePage
             string strStock = StockTxt.Text;
             string strPrice = PriceTxt.Text;
 
-            var result = MedicineController.AddMedicine(name, description, strStock, strPrice);
-            if (result == "Insert Success")
-            {
-                LblMessage.Text = result;
-                LblMessage.Visible = true;
-            }
-            if (result.GetType().Equals(typeof(string)))
-            {
-                LblMessage.Text = result;
-                LblMessage.Visible = true;
-            }
-            
+            string result = MedicineController.AddMedicine(name, description, strStock, strPrice);
+            LblMessage.Text = result;
+            LblMessage.Visible = true;
         }
     }
 }

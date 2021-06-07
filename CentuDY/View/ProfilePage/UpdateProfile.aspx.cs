@@ -32,20 +32,13 @@ namespace CentuDY.View.ProfilePage
             string phoneNumber = PhoneTxt.Text;
             string address = AddressTxt.Text;
             
-            var result = UserController.UpdateUserProfile(userId, name, gender, phoneNumber, address);
+            string result = UserController.UpdateUserProfile(userId, name, gender, phoneNumber, address);
+            lblMessage.Text = result;
+            lblMessage.Visible = true;
             if (result == "Update Success")
-            {
-                lblMessage.Text = result;
-                lblMessage.Visible = true;
+            {    
                 BtnUpdateProfile.Visible = false;
-                BtnBackHome.Visible = true;
-
             }
-            if (result.GetType().Equals(typeof(string)))
-            {
-                lblMessage.Text = result;
-                lblMessage.Visible = true;
-            } 
         }
 
         protected void BtnBackHome_Click(object sender, EventArgs e)

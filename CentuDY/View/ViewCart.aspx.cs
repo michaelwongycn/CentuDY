@@ -20,8 +20,8 @@ namespace CentuDY.View
 
         protected void Load_Grid()
         {
-            int id = int.Parse(Request.QueryString["Id"]);
-            carts = CartController.GetCartByUser(id);
+            int userId = ((Model.User)Session["user"]).UserId;
+            carts = CartController.GetCartByUser(userId);
             System.Diagnostics.Debug.WriteLine(carts);
             Grid_View_Cart.DataSource = carts;
             Grid_View_Cart.DataBind();

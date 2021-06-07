@@ -45,12 +45,12 @@ namespace CentuDY.View
 
         protected void BtnViewCart_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/View/ViewCart.aspx");
+            Response.Redirect("~/View/ViewCart.aspx?id=" + ((Model.User)Session["user"]).UserId);
         }
 
         protected void BtnViewTransHistory_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/View/ViewTransHistory.aspx");
+            Response.Redirect("~/View/ViewTransHistory.aspx?id=" + ((Model.User)Session["user"]).UserId);
         }
 
         protected void BtnInsertMedicine_Click(object sender, EventArgs e)

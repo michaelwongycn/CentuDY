@@ -39,8 +39,5 @@ namespace CentuDY.Controller
 
             else { return "Username already exists"; }
         }
-
-        
-
     }
 }

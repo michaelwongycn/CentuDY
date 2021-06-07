@@ -46,7 +46,7 @@ namespace CentuDY.View
             {
                 if (Request.Cookies["username"] == null)
                 {
-                    Response.Redirect("~/View/LoginPage.aspx");
+                    Response.Redirect("~/View/Login.aspx");
                 }
             }
             else
@@ -61,7 +61,7 @@ namespace CentuDY.View
 
             if (roleId == 1)
             {
-                Response.Redirect("~/View/HomePage.aspx");
+                Response.Redirect("~/View/Home.aspx");
             }
         }
 

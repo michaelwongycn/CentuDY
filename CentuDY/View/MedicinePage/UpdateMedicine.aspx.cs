@@ -23,7 +23,7 @@ namespace CentuDY.View.MedicinePage
                 medicine = MedicineController.GetMedicineById(id);
                 if(medicine == null)
                 {
-                    Response.Redirect("~/View/ViewMedicine.aspx");
+                    Response.Redirect("~/View/ViewMedicines.aspx");
                 }
                 else
                 {
@@ -39,14 +39,14 @@ namespace CentuDY.View.MedicinePage
         {
             if (Session["user"] == null)
             {
-                  Response.Redirect("~/View/LoginPage.aspx");
+                  Response.Redirect("~/View/Login.aspx");
             }
             else
             {
                 int roleId = ((Model.User)Session["user"]).RoleId;
                 if (roleId == 2)
                 {
-                    Response.Redirect("~/View/ViewHomePage.aspx");
+                    Response.Redirect("~/View/Home.aspx");
                 }
             }
         }

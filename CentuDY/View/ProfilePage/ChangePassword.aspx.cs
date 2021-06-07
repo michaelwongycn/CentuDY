@@ -19,7 +19,7 @@ namespace CentuDY.View.ProfilePage
         {
             if (Session["user"] == null)
             {
-                Response.Redirect("~/View/LoginPage.aspx");
+                Response.Redirect("~/View/Login.aspx");
             }
         }
         protected void BtnChangePassword_Click(object sender, EventArgs e)
@@ -40,7 +40,7 @@ namespace CentuDY.View.ProfilePage
 
         protected void BtnBackHome_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/View/ViewProfilePage.aspx");
+            Response.Redirect("~/View/Profile.aspx");
         }
     }
 }

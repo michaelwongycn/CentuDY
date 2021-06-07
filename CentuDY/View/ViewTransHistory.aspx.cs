@@ -19,6 +19,7 @@ namespace CentuDY.View
         
         protected void Page_Load(object sender, EventArgs e)
         {
+            checkUser();
             Load_Grid();
         }
 
@@ -38,6 +39,31 @@ namespace CentuDY.View
 
             Grid_View_Transaction_History.DataSource = dataTransaction;
             Grid_View_Transaction_History.DataBind();
+        }
+
+        private void checkUser()
+        {
+            if (Session["user"] == null)
+            {
+                if (Request.Cookies["username"] == null)
+                {
+                    Response.Redirect("~/View/LoginPage.aspx");
+                }
+            }
+            else
+            {
+                roleIsMember();
+            }
+        }
+
+        private void roleIsMember()
+        {
+            int roleId = ((Model.User)Session["user"]).RoleId;
+
+            if (roleId == 1)
+            {
+                Response.Redirect("~/View/HomePage.aspx");
+            }
         }
 
         protected void Grid_View_Transaction_History_RowDataBound(object sender, GridViewRowEventArgs e)

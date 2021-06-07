@@ -13,7 +13,7 @@ namespace CentuDY.View
 {
     public partial class LoginPage : System.Web.UI.Page
     {
-        List<User> user;
+        //List<User> user;
         protected void Page_Load(object sender, EventArgs e)
         {
             checkUser();
@@ -39,38 +39,32 @@ namespace CentuDY.View
         {
             string email = inputEmail.Text;
             string password = inputPassword.Text;
+ 
+            var user = AuthController.Login(email, password);
 
-            var user = AuthController.Login(email, password); 
-
-            if (user != null)
+            if (user.GetType().Equals(typeof(string)))
             {
-                Session["user"] = user;
-
-                if (chckRememberMe.Checked)
-                {
-                    HttpCookie cookie = new HttpCookie("username");
-                    cookie.Value = user.Username;
-                    cookie.Value = user.Password;
-
-                    Response.Cookies["username"].Value = inputEmail.Text;
-                    Response.Cookies["password"].Value = inputPassword.Text;
-
-                    cookie.Expires = DateTime.Now.AddDays(1);
-
-                    Response.Cookies.Add(cookie);
-                }
-
-                
-                Response.Redirect("~/View/ViewHomePage.aspx");
+                lblMessage.Text = user;
+                lblMessage.Visible = true;
             }
             else
             {
-                lblMessage.Text = AuthController.Login(email, password);
-                lblMessage.Visible = true;
-            }
+                Session["user"] = user;
+                if (chckRememberMe.Checked)
+                {
+                     HttpCookie cookie = new HttpCookie("username");
+                     cookie.Value = user.Username;
+                     cookie.Value = user.Password;
 
-           
+                     Response.Cookies["username"].Value = inputEmail.Text;
+                     Response.Cookies["password"].Value = inputPassword.Text;
+
+                     cookie.Expires = DateTime.Now.AddDays(1);
+
+                     Response.Cookies.Add(cookie);
+                }
+                    Response.Redirect("~/View/ViewHomePage.aspx");
+            }     
         }
-
     }
 }

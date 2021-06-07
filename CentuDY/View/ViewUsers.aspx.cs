@@ -16,6 +16,7 @@ namespace CentuDY.View
         List<User> user;
         protected void Page_Load(object sender, EventArgs e)
         {
+            checkUser();
             Load_Grid();
         }
         private void checkUser()
@@ -25,6 +26,14 @@ namespace CentuDY.View
                 if (Request.Cookies["username"] == null)
                 {
                     Response.Redirect("~/View/LoginPage.aspx");
+                }
+            }
+            else
+            {
+                int roleId = ((Model.User)Session["user"]).RoleId;
+                if (roleId == 2)
+                {
+                    Response.Redirect("~/View/ViewHomePage.aspx");
                 }
             }
         }

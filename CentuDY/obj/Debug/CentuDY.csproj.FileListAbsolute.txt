@@ -246,8 +246,8 @@ D:\GitHub\CentuDY\CentuDY\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform
 D:\GitHub\CentuDY\CentuDY\bin\EntityFramework.xml
 D:\GitHub\CentuDY\CentuDY\bin\EntityFramework.SqlServer.xml
 D:\GitHub\CentuDY\CentuDY\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\GitHub\CentuDY\CentuDY\obj\Debug\CentuDY.csproj.AssemblyReference.cache
 D:\GitHub\CentuDY\CentuDY\obj\Debug\CentuDY.csproj.CoreCompileInputs.cache
 D:\GitHub\CentuDY\CentuDY\obj\Debug\CentuDY.csproj.CopyComplete
 D:\GitHub\CentuDY\CentuDY\obj\Debug\CentuDY.dll
 D:\GitHub\CentuDY\CentuDY\obj\Debug\CentuDY.pdb
+D:\GitHub\CentuDY\CentuDY\obj\Debug\CentuDY.csproj.AssemblyReference.cache

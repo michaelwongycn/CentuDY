@@ -37,18 +37,25 @@ namespace CentuDY.View
             string phone = inputPhoneNumber.Text;
             string address = inputAddress.Text;
 
-            if(username == "" || password == ""|| confrimPassword == ""|| name == ""|| gender == ""|| phone == ""|| address == "")
-            {
-               lblmessage.Text = AuthController.Register(username, password, confrimPassword, name, gender, phone, address);
-               lblmessage.Visible = true;
-            }
-            else
-            {
-                lblmessage.Text = AuthController.Register(username, password, confrimPassword, name, gender, phone, address);
-                lblmessage.Visible = true;
-                Response.Redirect("~/View/LoginPage.aspx");
-            }
+            var result = AuthController.Register(username, password, confrimPassword, name, gender, phone, address);
 
+            if (result == "Register Success")
+            {
+                lblmessage.Text = result;
+                lblmessage.Visible = true;
+                btnRegister.Visible = false;
+                btnBackLogin.Visible = true;
+            }
+            if (result.GetType().Equals(typeof(string)))
+            {
+                lblmessage.Text = result;
+                lblmessage.Visible = true;
+            }
+        }
+
+        protected void btnBackLogin_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/View/LoginPage.aspx");
         }
     }
 }

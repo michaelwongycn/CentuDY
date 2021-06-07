@@ -13,7 +13,7 @@ namespace CentuDY.View
 {
     public partial class LoginPage : System.Web.UI.Page
     {
-        //List<User> user;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             checkUser();
@@ -52,16 +52,16 @@ namespace CentuDY.View
                 Session["user"] = user;
                 if (chckRememberMe.Checked)
                 {
-                     HttpCookie cookie = new HttpCookie("username");
-                     cookie.Value = user.Username;
-                     cookie.Value = user.Password;
+                     HttpCookie cookie = new HttpCookie("user");
+                     cookie.Secure = true;
+                     cookie["username"] = inputEmail.Text;
+                     cookie["password"] = inputPassword.Text;
 
-                     Response.Cookies["username"].Value = inputEmail.Text;
-                     Response.Cookies["password"].Value = inputPassword.Text;
-
-                     cookie.Expires = DateTime.Now.AddDays(1);
-
-                     Response.Cookies.Add(cookie);
+                    if (inputEmail.Text != "" && inputPassword.Text != "")
+                    {
+                        cookie.Expires = DateTime.Now.AddDays(1);
+                        Response.Cookies.Add(cookie);
+                    }
                 }
                     Response.Redirect("~/View/ViewHomePage.aspx");
             }     

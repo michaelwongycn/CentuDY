@@ -47,11 +47,8 @@ namespace CentuDY.View
             Session.Abandon();
             Session.Clear();
 
-            if (Request.Cookies["username"] != null && Request.Cookies["password"] != null)
-            {
-                Response.Cookies["username"].Expires = DateTime.Now.AddDays(-1);
-                Response.Cookies["password"].Expires = DateTime.Now.AddDays(-1);
-            }
+            Response.Cookies["user"].Expires = DateTime.Now.AddDays(-1);
+
             Response.Redirect("~/View/LoginPage.aspx");
         }
 
@@ -79,6 +76,7 @@ namespace CentuDY.View
         {
             Response.Redirect("~/View/ViewTransReport.aspx");
         }
+
         private void checkUser()
         {
             if (Session["user"] == null)
@@ -90,9 +88,6 @@ namespace CentuDY.View
                 else
                 {
                     string username = Request.Cookies["username"].Value;
-                    User user = new User();
-                    user.Username = username;
-                    Session["user"] = username;
                     UserNameTxt.Text = username;
                 }
             }
@@ -116,10 +111,7 @@ namespace CentuDY.View
             {
                 BtnViewCart.Visible = true;
                 BtnViewTransHistory.Visible = true;
-                Grid_View_Medicine.Visible = true;
-
-
-                
+                Grid_View_Medicine.Visible = true;   
             }
 
         }
@@ -132,7 +124,7 @@ namespace CentuDY.View
 
             if (e.CommandName == "AddToCart")
             {
-                Response.Redirect("~/View/AddToCart.aspx?index=" + id);
+                Response.Redirect("~/View/AddToCart.aspx?Id=" + id);
             }
         }
     }

@@ -70,7 +70,8 @@
                 <br />
                 <br />
                 <asp:Label ID="lblmessage" Visible="false" runat="server" Text="Label"></asp:Label><br />
-                <asp:Button ID="btnRegister" OnClick="btnRegister_Click" runat="server" Text="Register" />
+                <asp:Button ID="btnRegister" OnClick="btnRegister_Click" Visible="true" runat="server" Text="Register" />
+                <asp:Button ID="btnBackLogin" OnClick="btnBackLogin_Click" Visible="false" runat="server" Text="Back To Login Page" />
             </div>
     </form>
     </div>

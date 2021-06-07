@@ -39,10 +39,7 @@ namespace CentuDY.View.MedicinePage
         {
             if (Session["user"] == null)
             {
-                if (Request.Cookies["username"] == null)
-                {
-                    Response.Redirect("~/View/LoginPage.aspx");
-                }
+                  Response.Redirect("~/View/LoginPage.aspx");
             }
             else
             {
@@ -60,17 +57,18 @@ namespace CentuDY.View.MedicinePage
             string strStock = StockTxt.Text;
             string strPrice = PriceTxt.Text;
 
-            if (name == "" || description == "" || strStock == "" || strPrice == "")
+            var result = MedicineController.UpdateMedicine(medicine.MedicineId, name, description, strStock, strPrice);
+            if (result == "Update Success")
             {
-                LblMessage.Text = MedicineController.UpdateMedicine(medicine.MedicineId, name, description, strStock, strPrice);
+                LblMessage.Text = result;
                 LblMessage.Visible = true;
             }
-            else
+            if (result.GetType().Equals(typeof(string)))
             {
-                LblMessage.Text = MedicineController.UpdateMedicine(medicine.MedicineId, name, description, strStock, strPrice);
+                LblMessage.Text = result;
                 LblMessage.Visible = true;
-            }
+            } 
         }
-    
+
     }
 }

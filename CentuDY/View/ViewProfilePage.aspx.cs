@@ -9,7 +9,6 @@ using System.Web.UI.WebControls;
 
 namespace CentuDY.View
 {
-    
     public partial class ViewProfilePage : System.Web.UI.Page
     {
         static User user;
@@ -19,6 +18,7 @@ namespace CentuDY.View
 
             int id = ((Model.User)Session["user"]).UserId;
             user = UserController.GetUserById(id);
+
             UserNameTxt.Text = user.Username;
             NameTxt.Text = user.Name;
             GenderTxt.Text = user.Gender;
@@ -44,7 +44,6 @@ namespace CentuDY.View
         {
             Response.Redirect("~/View/ProfilePage/ChangePassword.aspx");
         }
-
-        
+  
     }
 }

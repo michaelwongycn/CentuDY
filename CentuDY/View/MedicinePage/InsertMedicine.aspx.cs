@@ -20,11 +20,8 @@ namespace CentuDY.View.MedicinePage
         private void checkUser()
         {
             if (Session["user"] == null)
-            {
-                if (Request.Cookies["username"] == null)
-                {
-                    Response.Redirect("~/View/LoginPage.aspx");
-                }
+            {       
+                Response.Redirect("~/View/LoginPage.aspx");
             }
             else
             {
@@ -42,16 +39,18 @@ namespace CentuDY.View.MedicinePage
             string strStock = StockTxt.Text;
             string strPrice = PriceTxt.Text;
 
-            if (name == "" || description == "" || strStock == "" || strPrice == "")
+            var result = MedicineController.AddMedicine(name, description, strStock, strPrice);
+            if (result == "Insert Success")
             {
-                LblMessage.Text = MedicineController.AddMedicine(name,description,strStock,strPrice);
+                LblMessage.Text = result;
                 LblMessage.Visible = true;
             }
-            else
+            if (result.GetType().Equals(typeof(string)))
             {
-                LblMessage.Text= MedicineController.AddMedicine(name, description, strStock, strPrice);
-                LblMessage.Visible = true;         
+                LblMessage.Text = result;
+                LblMessage.Visible = true;
             }
+            
         }
     }
 }

@@ -1225,7 +1225,6 @@
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
     <Content Include="View\AddToCart.aspx" />
-    <Content Include="View\HomePage\ViewHomePage.aspx" />
     <Content Include="View\LoginPage.aspx" />
     <Content Include="View\MedicinePage\InsertMedicine.aspx" />
     <Content Include="View\MedicinePage\UpdateMedicine.aspx" />
@@ -1317,20 +1316,6 @@
     </Compile>
     <Compile Include="View\AddToCart.aspx.designer.cs">
       <DependentUpon>AddToCart.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="View\HomePage\HomeMaster.Master.cs">
-      <DependentUpon>HomeMaster.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="View\HomePage\HomeMaster.Master.designer.cs">
-      <DependentUpon>HomeMaster.Master</DependentUpon>
-    </Compile>
-    <Compile Include="View\HomePage\ViewHomePage.aspx.cs">
-      <DependentUpon>ViewHomePage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="View\HomePage\ViewHomePage.aspx.designer.cs">
-      <DependentUpon>ViewHomePage.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\LoginPage.aspx.cs">
       <DependentUpon>LoginPage.aspx</DependentUpon>
@@ -1458,7 +1443,6 @@
       <DependentUpon>TransactionDataSet.xsd</DependentUpon>
     </Content>
     <None Include="packages.config" />
-    <Content Include="View\HomePage\HomeMaster.Master" />
     <Content Include="View\MainPage.Master" />
     <Content Include="View\MedicinePage\MedicinePage.Master" />
     <None Include="Web.Debug.config">
@@ -1493,7 +1477,9 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>50269</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://localhost:44377/</IISUrl>
+          <IISUrl>https://localhost:50269/</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>https://localhost:44377/</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

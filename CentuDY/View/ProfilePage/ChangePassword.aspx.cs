@@ -19,10 +19,7 @@ namespace CentuDY.View.ProfilePage
         {
             if (Session["user"] == null)
             {
-                if (Request.Cookies["username"] == null)
-                {
-                    Response.Redirect("~/View/LoginPage.aspx");
-                }
+                Response.Redirect("~/View/LoginPage.aspx");
             }
         }
         protected void BtnChangePassword_Click(object sender, EventArgs e)
@@ -32,19 +29,19 @@ namespace CentuDY.View.ProfilePage
             string newPassword = NewPasswordTxt.Text;
             string confrimPassword = ConfirmPasswordTxt.Text;
 
-            if(oldPassword == "" || newPassword == "" || confrimPassword == "")
+            var result = UserController.UpdateUserPassword(username, oldPassword, newPassword, confrimPassword);
+            if(result == "Change Password Success")
             {
-                lblMessage.Text = UserController.UpdateUserPassword(username, oldPassword, newPassword, confrimPassword);
-                lblMessage.Visible = true;
-            }
-            else
-            {
-                lblMessage.Text = UserController.UpdateUserPassword(username, oldPassword, newPassword, confrimPassword);
+                lblMessage.Text = result;
                 lblMessage.Visible = true;
                 BtnChangePassword.Visible = false;
                 BtnBackHome.Visible = true;
             }
-            
+            if (result.GetType().Equals(typeof(string)))
+            {
+                lblMessage.Text = result;
+                lblMessage.Visible = true;
+            }
         }
 
         protected void BtnBackHome_Click(object sender, EventArgs e)

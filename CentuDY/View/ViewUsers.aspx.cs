@@ -23,10 +23,7 @@ namespace CentuDY.View
         {
             if (Session["user"] == null)
             {
-                if (Request.Cookies["username"] == null)
-                {
-                    Response.Redirect("~/View/LoginPage.aspx");
-                }
+                Response.Redirect("~/View/LoginPage.aspx");
             }
             else
             {

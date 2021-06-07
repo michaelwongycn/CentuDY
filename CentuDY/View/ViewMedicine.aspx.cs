@@ -1,6 +1,5 @@
 ﻿using CentuDY.Controller;
 using CentuDY.Model;
-using CentuDY.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +12,7 @@ namespace CentuDY.View
     public partial class ViewMedicine : System.Web.UI.Page
     {
         List<Medicine> medicine;
+        List<Medicine> mc;
         protected void Page_Load(object sender, EventArgs e)
         {
             checkUser();
@@ -50,15 +50,23 @@ namespace CentuDY.View
             if (roleId == 1)
             {
                 BtnInsertMedicine.Visible = true;
-                Grid_View_Medicine.Columns[4].Visible = true;
-            }
-            else if (roleId == 2)
-            {
                 Grid_View_Medicine.Columns[5].Visible = true;
-                
+                Grid_View_Medicine.Columns[6].Visible = false;
             }
-
         }
+
+        protected void Grid_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            int index = Convert.ToInt32(e.CommandArgument);
+            GridViewRow gvRow = Grid_View_Medicine.Rows[index];
+            int id = int.Parse(gvRow.Cells[0].Text);
+            
+            if (e.CommandName == "AddToCart")
+            {
+                Response.Redirect("~/View/AddToCart.aspx?index=" + id);
+            }
+        }
+
         private void checkUser()
         {
             if (Session["user"] == null)
@@ -83,10 +91,13 @@ namespace CentuDY.View
         protected void Grid_View_Medicine_RowEditing(object sender, GridViewEditEventArgs e)
         {
             Medicine medicines = medicine[e.NewEditIndex];
-            
             Response.Redirect("~/View/MedicinePage/UpdateMedicine.aspx?id="+medicines.MedicineId);
         }
 
+        protected void Grid_View_Medicine_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+
+        }
         protected void SearchBtn_Click(object sender, EventArgs e)
         {   
             Load_Grid();

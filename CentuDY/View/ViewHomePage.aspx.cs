@@ -15,13 +15,25 @@ namespace CentuDY.View
         List<Medicine> medicine;
         protected void Page_Load(object sender, EventArgs e)
         {
-                checkUser();
-                checkRole();  
+            if (!IsPostBack)
+            {
+                Load_Grid();
+            }
+            checkUser();
+            checkRole();  
         }
 
         protected void ViewMedicines_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/View/ViewMedicine.aspx");
+        }
+
+        protected void Load_Grid()
+        {
+            Grid_View_Medicine.Columns[5].Visible = true;
+            medicine = MedicineController.GetRandomMedicines();
+            Grid_View_Medicine.DataSource = medicine;
+            Grid_View_Medicine.DataBind();
         }
 
         protected void BtnViewProfile_Click(object sender, EventArgs e)
@@ -45,12 +57,12 @@ namespace CentuDY.View
 
         protected void BtnViewCart_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/View/ViewCart.aspx");
+            Response.Redirect("~/View/ViewCart.aspx?id=" + ((Model.User)Session["user"]).UserId);
         }
 
         protected void BtnViewTransHistory_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/View/ViewTransHistory.aspx");
+            Response.Redirect("~/View/ViewTransHistory.aspx?id=" + ((Model.User)Session["user"]).UserId);
         }
 
         protected void BtnInsertMedicine_Click(object sender, EventArgs e)
@@ -106,12 +118,22 @@ namespace CentuDY.View
                 BtnViewTransHistory.Visible = true;
                 Grid_View_Medicine.Visible = true;
 
-                Grid_View_Medicine.Columns[4].Visible = true;
-                medicine = MedicineController.GetRandomMedicines();
-                Grid_View_Medicine.DataSource = medicine;
-                Grid_View_Medicine.DataBind();
+
+                
             }
 
+        }
+
+        protected void Grid_View_Medicine_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            int index = Convert.ToInt32(e.CommandArgument);
+            GridViewRow gvRow = Grid_View_Medicine.Rows[index];
+            int id = int.Parse(gvRow.Cells[0].Text);
+
+            if (e.CommandName == "AddToCart")
+            {
+                Response.Redirect("~/View/AddToCart.aspx?index=" + id);
+            }
         }
     }
 }

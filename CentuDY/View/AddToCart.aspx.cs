@@ -29,7 +29,7 @@ namespace CentuDY.View
 
         protected Medicine GetMedicineByID()
         {
-            MedicineId = int.Parse(Request.QueryString["index"]);
+            MedicineId = int.Parse(Request.QueryString["Id"]);
             Medicine data = MedicineController.GetMedicineById(MedicineId);
             return data;
         }
@@ -41,21 +41,14 @@ namespace CentuDY.View
 
         protected void btnAddToCart_Click(object sender, EventArgs e)
         {
-            txtAlert.Text =  CartController.AddCart(UserId, MedicineId, GetQuantity());
-            string validate = txtAlert.Text;
-            if (validate.Equals("Quantity must be filled ")
-                || txtAlert.Text.Equals("Quantity must be numeric ")
-                || txtAlert.Text.Equals("Quantity must be more than 0 ")
-                || txtAlert.Text.Equals("Quantity cannot be more than available stock ")
-                || txtAlert.Text.Equals("Quantity exceeding available stock")
-                || txtAlert.Text.Equals("Quantity exceeding available stock")
-                )
-            {
-
-            }
-            else
+            var result =  CartController.AddCart(UserId, MedicineId, GetQuantity());
+            if (result == "Add to cart success")
             {
                 Response.Redirect("~/View/ViewCart.aspx?id=" + UserId);
+            }
+            if (result.GetType().Equals(typeof(string)))
+            {
+                txtAlert.Text = result;
             }
         }
     }

@@ -12,7 +12,6 @@ namespace CentuDY.View
     public partial class ViewMedicine : System.Web.UI.Page
     {
         List<Medicine> medicine;
-        List<Medicine> mc;
         protected void Page_Load(object sender, EventArgs e)
         {
             checkUser();
@@ -63,7 +62,7 @@ namespace CentuDY.View
             
             if (e.CommandName == "AddToCart")
             {
-                Response.Redirect("~/View/AddToCart.aspx?index=" + id);
+                Response.Redirect("~/View/AddToCart.aspx?Id=" + id);
             }
         }
 
@@ -71,14 +70,7 @@ namespace CentuDY.View
         {
             if (Session["user"] == null)
             {
-                if (Request.Cookies["username"] == null)
-                {
-                    Response.Redirect("~/View/LoginPage.aspx");
-                }
-                else
-                {
-                    checkRole();
-                }
+                 Response.Redirect("~/View/LoginPage.aspx");
             } 
         }
         protected void Grid_View_Medicine_RowDeleting(object sender, GridViewDeleteEventArgs e)
@@ -94,10 +86,6 @@ namespace CentuDY.View
             Response.Redirect("~/View/MedicinePage/UpdateMedicine.aspx?id="+medicines.MedicineId);
         }
 
-        protected void Grid_View_Medicine_RowDataBound(object sender, GridViewRowEventArgs e)
-        {
-
-        }
         protected void SearchBtn_Click(object sender, EventArgs e)
         {   
             Load_Grid();

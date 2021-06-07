@@ -11,7 +11,7 @@
             <br />
             <asp:Button ID="BtnInsertMedicine" Visible="false" OnClick="BtnInsertMedicine_Click" runat="server" Text="Insert Medicine" />
             <br />
-            <asp:GridView ID="Grid_View_Medicine" runat="server" AutoGenerateColumns="false" OnRowCommand="Grid_RowCommand" OnRowDeleting="Grid_View_Medicine_RowDeleting" OnRowEditing="Grid_View_Medicine_RowEditing" OnRowDataBound="Grid_View_Medicine_RowDataBound" >
+            <asp:GridView ID="Grid_View_Medicine" runat="server" AutoGenerateColumns="false" OnRowCommand="Grid_RowCommand" OnRowDeleting="Grid_View_Medicine_RowDeleting" OnRowEditing="Grid_View_Medicine_RowEditing">
                 <Columns>
                     <asp:BoundField DataField="MedicineId" HeaderText="Id" SortExpression="MedicineId" Visible="true" />
                     <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />

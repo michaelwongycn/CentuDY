@@ -21,10 +21,7 @@ namespace CentuDY.View.ProfilePage
         {
             if (Session["user"] == null)
             {
-                if (Request.Cookies["username"] == null)
-                {
-                    Response.Redirect("~/View/LoginPage.aspx");
-                }
+               Response.Redirect("~/View/LoginPage.aspx");           
             }
         }
         protected void BtnUpdateProfile_Click(object sender, EventArgs e)
@@ -35,21 +32,20 @@ namespace CentuDY.View.ProfilePage
             string phoneNumber = PhoneTxt.Text;
             string address = AddressTxt.Text;
             
-            if(name == "" || gender ==  "" || phoneNumber == "" || address == "")
+            var result = UserController.UpdateUserProfile(userId, name, gender, phoneNumber, address);
+            if (result == "Update Success")
             {
-                lblMessage.Text = UserController.UpdateUserProfile(userId, name, gender, phoneNumber, address);
-                lblMessage.Visible = true;
-            }
-            else
-            {
-
-                lblMessage.Text = UserController.UpdateUserProfile(userId, name, gender, phoneNumber, address);
+                lblMessage.Text = result;
                 lblMessage.Visible = true;
                 BtnUpdateProfile.Visible = false;
                 BtnBackHome.Visible = true;
-                
+
             }
-            
+            if (result.GetType().Equals(typeof(string)))
+            {
+                lblMessage.Text = result;
+                lblMessage.Visible = true;
+            } 
         }
 
         protected void BtnBackHome_Click(object sender, EventArgs e)

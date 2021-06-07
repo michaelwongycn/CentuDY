@@ -15,8 +15,8 @@ namespace CentuDY.View
         int grandTotal = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
+            Load_Grid();
             checkUser();
-            Load_Grid(); 
         }
 
         protected void Load_Grid()
@@ -41,7 +41,7 @@ namespace CentuDY.View
             {
                 if (Request.Cookies["username"] == null)
                 {
-                    Response.Redirect("~/View/Login.aspx");
+                    Response.Redirect("~/View/LoginPage.aspx");
                 }
             }
             else
@@ -56,7 +56,7 @@ namespace CentuDY.View
 
             if (roleId == 1)
             {
-                 Response.Redirect("~/View/Home.aspx");
+                 Response.Redirect("~/View/HomePage.aspx");
             }
         }
 

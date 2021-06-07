@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace CentuDY.View
 {
-    public partial class Profile : System.Web.UI.Page
+    public partial class ViewProfilePage : System.Web.UI.Page
     {
         static User user;
         protected void Page_Load(object sender, EventArgs e)
@@ -29,7 +29,7 @@ namespace CentuDY.View
         {
             if (Session["user"] == null)
             {
-                Response.Redirect("~/View/Login.aspx");
+                Response.Redirect("~/View/LoginPage.aspx");
             }
         }
         protected void BtnUpdateProfile_Click(object sender, EventArgs e)
@@ -41,6 +41,6 @@ namespace CentuDY.View
         {
             Response.Redirect("~/View/ProfilePage/ChangePassword.aspx");
         }
-
+  
     }
 }

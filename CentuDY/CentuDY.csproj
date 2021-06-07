@@ -44,18 +44,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CrystalDecisions.CrystalReports.Engine">
-      <HintPath>c:\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
-    </Reference>
-    <Reference Include="CrystalDecisions.ReportSource">
-      <HintPath>c:\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.ReportSource.dll</HintPath>
-    </Reference>
-    <Reference Include="CrystalDecisions.Shared">
-      <HintPath>c:\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.Shared.dll</HintPath>
-    </Reference>
-    <Reference Include="CrystalDecisions.Web">
-      <HintPath>c:\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.Web.dll</HintPath>
-    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Web, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -1233,18 +1225,18 @@
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
     <Content Include="View\AddToCart.aspx" />
-    <Content Include="View\Home.aspx" />
-    <Content Include="View\Login.aspx" />
+    <Content Include="View\LoginPage.aspx" />
     <Content Include="View\MedicinePage\InsertMedicine.aspx" />
     <Content Include="View\MedicinePage\UpdateMedicine.aspx" />
-    <Content Include="View\Profile.aspx" />
     <Content Include="View\ProfilePage\ChangePassword.aspx" />
     <Content Include="View\ProfilePage\UpdateProfile.aspx" />
-    <Content Include="View\Register.aspx" />
+    <Content Include="View\RegisterPage.aspx" />
     <Content Include="View\ViewCart.aspx" />
-    <Content Include="View\ViewMedicines.aspx" />
-    <Content Include="View\ViewTransactionsHistory.aspx" />
-    <Content Include="View\ViewTransactionsReport.aspx" />
+    <Content Include="View\ViewHomePage.aspx" />
+    <Content Include="View\ViewMedicine.aspx" />
+    <Content Include="View\ViewProfilePage.aspx" />
+    <Content Include="View\ViewTransHistory.aspx" />
+    <Content Include="View\ViewTransReport.aspx" />
     <Content Include="View\ViewUsers.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -1325,19 +1317,12 @@
     <Compile Include="View\AddToCart.aspx.designer.cs">
       <DependentUpon>AddToCart.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\Home.aspx.cs">
-      <DependentUpon>Home.aspx</DependentUpon>
+    <Compile Include="View\LoginPage.aspx.cs">
+      <DependentUpon>LoginPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\Home.aspx.designer.cs">
-      <DependentUpon>Home.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="View\Login.aspx.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="View\Login.aspx.designer.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
+    <Compile Include="View\LoginPage.aspx.designer.cs">
+      <DependentUpon>LoginPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\MainPage.Master.cs">
       <DependentUpon>MainPage.Master</DependentUpon>
@@ -1367,13 +1352,6 @@
     <Compile Include="View\MedicinePage\UpdateMedicine.aspx.designer.cs">
       <DependentUpon>UpdateMedicine.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\Profile.aspx.cs">
-      <DependentUpon>Profile.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="View\Profile.aspx.designer.cs">
-      <DependentUpon>Profile.aspx</DependentUpon>
-    </Compile>
     <Compile Include="View\ProfilePage\ChangePassword.aspx.cs">
       <DependentUpon>ChangePassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1388,12 +1366,12 @@
     <Compile Include="View\ProfilePage\UpdateProfile.aspx.designer.cs">
       <DependentUpon>UpdateProfile.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\Register.aspx.cs">
-      <DependentUpon>Register.aspx</DependentUpon>
+    <Compile Include="View\RegisterPage.aspx.cs">
+      <DependentUpon>RegisterPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\Register.aspx.designer.cs">
-      <DependentUpon>Register.aspx</DependentUpon>
+    <Compile Include="View\RegisterPage.aspx.designer.cs">
+      <DependentUpon>RegisterPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\ViewCart.aspx.cs">
       <DependentUpon>ViewCart.aspx</DependentUpon>
@@ -1402,26 +1380,40 @@
     <Compile Include="View\ViewCart.aspx.designer.cs">
       <DependentUpon>ViewCart.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\ViewMedicines.aspx.cs">
-      <DependentUpon>ViewMedicines.aspx</DependentUpon>
+    <Compile Include="View\ViewHomePage.aspx.cs">
+      <DependentUpon>ViewHomePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\ViewMedicines.aspx.designer.cs">
-      <DependentUpon>ViewMedicines.aspx</DependentUpon>
+    <Compile Include="View\ViewHomePage.aspx.designer.cs">
+      <DependentUpon>ViewHomePage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\ViewTransactionsHistory.aspx.cs">
-      <DependentUpon>ViewTransactionsHistory.aspx</DependentUpon>
+    <Compile Include="View\ViewMedicine.aspx.cs">
+      <DependentUpon>ViewMedicine.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\ViewTransactionsHistory.aspx.designer.cs">
-      <DependentUpon>ViewTransactionsHistory.aspx</DependentUpon>
+    <Compile Include="View\ViewMedicine.aspx.designer.cs">
+      <DependentUpon>ViewMedicine.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\ViewTransactionsReport.aspx.cs">
-      <DependentUpon>ViewTransactionsReport.aspx</DependentUpon>
+    <Compile Include="View\ViewProfilePage.aspx.cs">
+      <DependentUpon>ViewProfilePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\ViewTransactionsReport.aspx.designer.cs">
-      <DependentUpon>ViewTransactionsReport.aspx</DependentUpon>
+    <Compile Include="View\ViewProfilePage.aspx.designer.cs">
+      <DependentUpon>ViewProfilePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\ViewTransHistory.aspx.cs">
+      <DependentUpon>ViewTransHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ViewTransHistory.aspx.designer.cs">
+      <DependentUpon>ViewTransHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\ViewTransReport.aspx.cs">
+      <DependentUpon>ViewTransReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ViewTransReport.aspx.designer.cs">
+      <DependentUpon>ViewTransReport.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\ViewUsers.aspx.cs">
       <DependentUpon>ViewUsers.aspx</DependentUpon>
@@ -1485,9 +1477,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>50269</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://localhost:50269/</IISUrl>
-          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
-          <IISAppRootUrl>https://localhost:44377/</IISAppRootUrl>
+          <IISUrl>https://localhost:44377/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="CentuDY.View.Home" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ViewHomePage.aspx.cs" Inherits="CentuDY.View.ViewHomePage" %>
 
 <!DOCTYPE html>
 
@@ -39,4 +39,3 @@
     </form>
 </body>
 </html>
-

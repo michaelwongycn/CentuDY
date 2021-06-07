@@ -1,4 +1,7 @@
 ﻿using CentuDY.Controller;
+using CentuDY.Handler;
+using CentuDY.Model;
+using CentuDY.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,18 +11,19 @@ using System.Web.UI.WebControls;
 
 namespace CentuDY.View
 {
-    public partial class Login : System.Web.UI.Page
+    public partial class LoginPage : System.Web.UI.Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
             checkUser();
-            if (!IsPostBack)
-            {
-                if (Request.Cookies["username"] != null && Request.Cookies["password"] != null)
+           if (!IsPostBack)
+            {   
+                if (Request.Cookies["username"] != null && Request.Cookies["password"] != null )
                 {
                     inputEmail.Text = Request.Cookies["username"].Value;
                     inputPassword.Attributes.Add("value", Request.Cookies["password"].Value);
-
+                    
                 }
             }
         }
@@ -28,14 +32,14 @@ namespace CentuDY.View
         {
             if (Session["user"] != null)
             {
-                Response.Redirect("~/View/Home.aspx");
+                Response.Redirect("~/View/ViewHomePage.aspx");
             }
         }
         protected void btnLogin_Click(object sender, EventArgs e)
         {
             string email = inputEmail.Text;
             string password = inputPassword.Text;
-
+ 
             var user = AuthController.Login(email, password);
 
             if (user.GetType().Equals(typeof(string)))
@@ -48,10 +52,10 @@ namespace CentuDY.View
                 Session["user"] = user;
                 if (chckRememberMe.Checked)
                 {
-                    HttpCookie cookie = new HttpCookie("user");
-                    cookie.Secure = true;
-                    cookie["username"] = inputEmail.Text;
-                    cookie["password"] = inputPassword.Text;
+                     HttpCookie cookie = new HttpCookie("user");
+                     cookie.Secure = true;
+                     cookie["username"] = inputEmail.Text;
+                     cookie["password"] = inputPassword.Text;
 
                     if (inputEmail.Text != "" && inputPassword.Text != "")
                     {
@@ -59,8 +63,8 @@ namespace CentuDY.View
                         Response.Cookies.Add(cookie);
                     }
                 }
-                Response.Redirect("~/View/Home.aspx");
-            }
+                    Response.Redirect("~/View/ViewHomePage.aspx");
+            }     
         }
     }
 }

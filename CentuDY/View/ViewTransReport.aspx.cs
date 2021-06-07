@@ -1,16 +1,16 @@
-﻿using CentuDY.Controller;
-using CentuDY.CrystalReports;
-using CentuDY.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using CentuDY.Controller;
+using CentuDY.Model;
+using CentuDY.CrystalReports;
 
 namespace CentuDY.View
 {
-    public partial class ViewTransactionsReport : System.Web.UI.Page
+    public partial class ViewTransReport : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -25,7 +25,10 @@ namespace CentuDY.View
         {
             if (Session["user"] == null)
             {
-                 Response.Redirect("~/View/Login.aspx");
+                if (Request.Cookies["username"] == null)
+                {
+                    Response.Redirect("~/View/LoginPage.aspx");
+                }
             }
             else
             {
@@ -39,7 +42,7 @@ namespace CentuDY.View
 
             if (roleId == 2)
             {
-                Response.Redirect("~/View/Home.aspx");
+                Response.Redirect("~/View/HomePage.aspx");
             }
         }
 

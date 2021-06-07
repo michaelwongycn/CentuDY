@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="CentuDY.View.Login" %>
+﻿    <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LoginPage.aspx.cs" Inherits="CentuDY.View.LoginPage" %>
 
 <!DOCTYPE html>
 
@@ -34,10 +34,9 @@
                 <asp:Label ID="lblMessage" Visible="false" Text="Label" runat="server" /><br />
                 <asp:Button ID="btnLogin" ValidationGroup="Login" OnClick="btnLogin_Click" Text="Login" runat="server" /> <br />
                 <br />
-                <asp:HyperLink ID="register" NavigateUrl="Register.aspx" Text="Register" runat="server" />
+                <asp:HyperLink ID="register" NavigateUrl="RegisterPage.aspx" Text="Register" runat="server" />
             </div>
         </div>
     </form>
 </body>
 </html>
-

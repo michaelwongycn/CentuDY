@@ -1,5 +1,6 @@
-﻿using CentuDY.Model;
-using CentuDY.Controller;
+﻿using CentuDY.Controller;
+using CentuDY.Handler;
+using CentuDY.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ using System.Web.UI.WebControls;
 
 namespace CentuDY.View
 {
-    public partial class Home : System.Web.UI.Page
+    public partial class ViewHomePage : System.Web.UI.Page
     {
         List<Medicine> medicine;
         protected void Page_Load(object sender, EventArgs e)
@@ -19,12 +20,12 @@ namespace CentuDY.View
                 Load_Grid();
             }
             checkUser();
-            checkRole();
+            checkRole();  
         }
 
         protected void ViewMedicines_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/View/ViewMedicines.aspx");
+            Response.Redirect("~/View/ViewMedicine.aspx");
         }
 
         protected void Load_Grid()
@@ -37,7 +38,7 @@ namespace CentuDY.View
 
         protected void BtnViewProfile_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/View/Profile.aspx");
+            Response.Redirect("~/View/ViewProfilePage.aspx");
         }
 
         protected void BtnLogOut_Click(object sender, EventArgs e)
@@ -48,17 +49,17 @@ namespace CentuDY.View
 
             Response.Cookies["user"].Expires = DateTime.Now.AddDays(-1);
 
-            Response.Redirect("~/View/Login.aspx");
+            Response.Redirect("~/View/LoginPage.aspx");
         }
 
         protected void BtnViewCart_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/View/ViewCart.aspx");
+            Response.Redirect("~/View/ViewCart.aspx" );
         }
 
         protected void BtnViewTransHistory_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/View/ViewTransactionsHistory.aspx");
+            Response.Redirect("~/View/ViewTransHistory.aspx?id=" + ((Model.User)Session["user"]).UserId);
         }
 
         protected void BtnInsertMedicine_Click(object sender, EventArgs e)
@@ -73,7 +74,7 @@ namespace CentuDY.View
 
         protected void BtnViewTransReport_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/View/ViewTransactionsReport.aspx");
+            Response.Redirect("~/View/ViewTransReport.aspx");
         }
 
         private void checkUser()
@@ -82,7 +83,7 @@ namespace CentuDY.View
             {
                 if (Request.Cookies["username"] == null)
                 {
-                    Response.Redirect("~/View/Login.aspx");
+                    Response.Redirect("~/View/LoginPage.aspx");
                 }
                 else
                 {
@@ -110,7 +111,7 @@ namespace CentuDY.View
             {
                 BtnViewCart.Visible = true;
                 BtnViewTransHistory.Visible = true;
-                Grid_View_Medicine.Visible = true;
+                Grid_View_Medicine.Visible = true;   
             }
 
         }

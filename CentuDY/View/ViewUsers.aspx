@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:GridView ID="Grid_View_Users" runat="server" AutoGenerateColumns="false" OnRowDeleting="Grid_View_Users_RowDeleting">
+    <asp:GridView ID="Grid_View_Medicine" runat="server" AutoGenerateColumns="false" OnRowDeleting="Grid_View_Medicine_RowDeleting">
         <Columns>
             <asp:BoundField DataField="Username" HeaderText="Username" SortExpression="Username" />
             <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />

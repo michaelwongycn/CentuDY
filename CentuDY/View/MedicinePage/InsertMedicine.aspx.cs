@@ -21,14 +21,14 @@ namespace CentuDY.View.MedicinePage
         {
             if (Session["user"] == null)
             {       
-                Response.Redirect("~/View/Login.aspx");
+                Response.Redirect("~/View/LoginPage.aspx");
             }
             else
             {
                 int roleId = ((Model.User)Session["user"]).RoleId;
                 if(roleId == 2)
                 {
-                    Response.Redirect("~/View/Home.aspx");
+                    Response.Redirect("~/View/ViewHomePage.aspx");
                 }
             }
         }

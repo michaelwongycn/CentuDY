@@ -23,14 +23,14 @@ namespace CentuDY.View
         {
             if (Session["user"] == null)
             {
-                Response.Redirect("~/View/Login.aspx");
+                Response.Redirect("~/View/LoginPage.aspx");
             }
             else
             {
                 int roleId = ((Model.User)Session["user"]).RoleId;
                 if (roleId == 2)
                 {
-                    Response.Redirect("~/View/Home.aspx");
+                    Response.Redirect("~/View/ViewHomePage.aspx");
                 }
             }
         }
@@ -38,12 +38,12 @@ namespace CentuDY.View
         protected void Load_Grid()
         {
             user = UserController.GetUsers();
-
-            Grid_View_Users.DataSource = user;
-            Grid_View_Users.DataBind();
+           
+            Grid_View_Medicine.DataSource = user;
+            Grid_View_Medicine.DataBind();
         }
 
-        protected void Grid_View_Users_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        protected void Grid_View_Medicine_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             User users = user[e.RowIndex];
             UserController.DeleteUser(users.UserId);

@@ -1,22 +1,22 @@
-﻿using CentuDY.Controller;
-using CentuDY.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using CentuDY.Model;
+using CentuDY.Controller;
 
 namespace CentuDY.View
 {
-    public partial class ViewTransactionsHistory : System.Web.UI.Page
+    public partial class ViewTransHistory : System.Web.UI.Page
     {
         protected int grandTotal = 0;
         protected List<HeaderTransaction> headers;
         protected List<DetailTransaction> details;
         protected List<DetailTransaction> dataTransaction = new List<DetailTransaction>();
 
-
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             checkUser();
@@ -45,7 +45,10 @@ namespace CentuDY.View
         {
             if (Session["user"] == null)
             {
-                Response.Redirect("~/View/Login.aspx");
+                if (Request.Cookies["username"] == null)
+                {
+                    Response.Redirect("~/View/LoginPage.aspx");
+                }
             }
             else
             {
@@ -59,7 +62,7 @@ namespace CentuDY.View
 
             if (roleId == 1)
             {
-                Response.Redirect("~/View/Home.aspx");
+                Response.Redirect("~/View/HomePage.aspx");
             }
         }
 

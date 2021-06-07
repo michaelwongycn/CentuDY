@@ -29,6 +29,7 @@ namespace CentuDY.Controller
         {
             if (oldPassword == "") { return "Old password must be filled"; }
             if (newPassword == "") { return "New password must be filled"; }
+            if (newPassword.Length < 6) { return "New Password must have at least 6 characters"; }
             if (confirmPassword == "") { return "Confirmation Password must be filled"; }
             if (newPassword != confirmPassword) { return "Password must be the same"; }
             

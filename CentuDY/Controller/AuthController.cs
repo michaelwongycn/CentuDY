@@ -19,8 +19,10 @@ namespace CentuDY.Controller
 
         public static string Register(string username, string password, string confirmPassword, string name, string gender, string phoneNumber, string address)
         {
-            if(username == "") { return "Username must be filled"; }
+            if (username == "") { return "Username must be filled"; }
+            if (username.Length < 3) { return "Username must have at least 3 characters"; }
             if (password == "") { return "Password must be filled"; }
+            if (password.Length < 8) { return "Password must have at least 8 characters"; }
             if (confirmPassword == "") { return "Confirmation Password must be filled"; }
             if (password != confirmPassword) { return "Password must be the same"; }
             if (name == "") { return "Name must be filled"; }

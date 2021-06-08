@@ -16,13 +16,16 @@
                     </asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="GrandTotal">
-                <ItemTemplate>
-                    <asp:Label Text="" ID="txtGrandTotal" runat="server" />
-                </ItemTemplate>
-            </asp:TemplateField>
+            
             <asp:CommandField ButtonType="Button" HeaderText="Action" ShowDeleteButton="true" ShowHeader="true" Visible="true" />
         </Columns>
     </asp:GridView>
+    <br />
+    <asp:Label Text="GrandTotal: " runat="server" />
+    <asp:Label Text="" ID="txtGrandTotal" runat="server" />
+    <br />
+    <br />
+    <asp:Label Text="" ID="errMsg" runat="server" />
+    <br />
     <asp:Button Text="Checkout" ID="btnCheckout" OnClick="btnCheckout_Click" runat="server" />
 </asp:Content>

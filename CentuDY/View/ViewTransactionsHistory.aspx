@@ -16,11 +16,11 @@
                     </asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="GrandTotal">
-                <ItemTemplate>
-                    <asp:Label Text="" ID="txtGrandTotal" runat="server" />
-                </ItemTemplate>
-            </asp:TemplateField>
         </Columns>
     </asp:GridView>
+    <br />
+    <asp:Label Text="GrandTotal: " runat="server" />
+    <asp:Label Text="" ID="txtGrandTotal" runat="server" />
+    <br />
+    <br />
 </asp:Content>

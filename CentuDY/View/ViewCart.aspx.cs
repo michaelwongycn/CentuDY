@@ -10,26 +10,29 @@ namespace CentuDY.View {
     {
         List<Cart> carts;
         int grandTotal = 0;
+        int userId;
         protected void Page_Load(object sender, EventArgs e)
         {
+            txtGrandTotal.Visible = true;
             checkUser();
             Load_Grid(); 
         }
 
         protected void Load_Grid()
         {
-            int userId = ((User)Session["user"]).UserId;
+            userId = ((User)Session["user"]).UserId;
             carts = CartController.GetCartByUser(userId);
             System.Diagnostics.Debug.WriteLine(carts);
             Grid_View_Cart.DataSource = carts;
             Grid_View_Cart.DataBind();
+            setGrandTotal();
         }
 
         protected void Grid_View_Cart_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             Cart cr = carts[e.RowIndex];
             CartController.DeleteCart(cr.UserId, cr.MedicineId);
-            Load_Grid();
+            Page.Response.Redirect(Page.Request.Url.ToString(), true);
         }
 
         private void checkUser()
@@ -57,6 +60,11 @@ namespace CentuDY.View {
             }
         }
 
+        protected void setGrandTotal()
+        {
+            txtGrandTotal.Text = "Rp" + grandTotal.ToString();
+        }
+
         protected void Grid_View_Cart_RowDataBound(object sender, GridViewRowEventArgs e)
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
@@ -64,15 +72,29 @@ namespace CentuDY.View {
                 Label SubTotal = (Label)e.Row.FindControl("txtSubTotal");
 
                 grandTotal = grandTotal + int.Parse(SubTotal.Text);
-
-                Label GrandTotal = (Label)e.Row.FindControl("txtGrandTotal");
-                GrandTotal.Text = grandTotal.ToString();
             }
+        }
+
+        protected bool cartIsEmpty()
+        {
+            if (CartController.GetCartByUser(userId).Count == 0) return true;
+
+            return false;
         }
 
         protected void btnCheckout_Click(object sender, EventArgs e)
         {
-            CartController.Checkout(carts.First().UserId);
+            if (cartIsEmpty())
+            {
+                errMsg.Text = "Cart is Empty";
+            }
+            else
+            {
+                CartController.Checkout(carts.First().UserId);
+                Load_Grid();
+                grandTotal = 0;
+                setGrandTotal();
+            }
         }
     }
 }

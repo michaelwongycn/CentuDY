@@ -64,7 +64,15 @@ namespace CentuDY.View {
             string result =  CartController.AddCart(UserId, MedicineId, GetQuantity());
             txtAlert.Text = result;
 
-            Response.Redirect("~/View/ViewCart.aspx");
+            if (result == "Add to cart success")
+            {
+                Response.Redirect("~/View/ViewCart.aspx");
+            }
+
+            if (result == "Success updating cart quantity")
+            {
+                Response.Redirect("~/View/ViewCart.aspx");
+            }
         }
     }
 }

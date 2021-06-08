@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/MedicinePage/MedicinePage.Master" AutoEventWireup="true" CodeBehind="UpdateMedicine.aspx.cs" Inherits="CentuDY.View.MedicinePage.UpdateMedicine" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/MedicinePage.Master" AutoEventWireup="true" CodeBehind="InsertMedicine.aspx.cs" Inherits="CentuDY.View.InsertMedicine" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -12,5 +12,5 @@
     <asp:TextBox ID="PriceTxt" runat="server"></asp:TextBox><br />
     <asp:Label ID="LblMessage" Visible="false" runat="server" Text="Label"></asp:Label><br />
     <br />
-    <asp:Button ID="BtnUpdate" OnClick="BtnUpdate_Click" runat="server" Text="Update Medicine" />
+    <asp:Button ID="BtnInsert" OnClick="BtnInsert_Click" runat="server" Text="Insert Medicine" />
 </asp:Content>

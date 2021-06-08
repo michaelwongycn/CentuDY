@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CentuDY.View.MedicinePage
+namespace CentuDY.View
 {
 
 

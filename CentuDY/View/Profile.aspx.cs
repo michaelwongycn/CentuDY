@@ -29,12 +29,12 @@ namespace CentuDY.View
         }
         protected void BtnUpdateProfile_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/View/ProfilePage/UpdateProfile.aspx");
+            Response.Redirect("~/View/UpdateProfile.aspx");
         }
 
         protected void BtnChangePassword_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/View/ProfilePage/ChangePassword.aspx");
+            Response.Redirect("~/View/ChangePassword.aspx");
         }
 
     }

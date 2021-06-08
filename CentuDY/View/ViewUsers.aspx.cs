@@ -41,15 +41,24 @@ namespace CentuDY.View {
 
             int index = Convert.ToInt32(e.CommandArgument);
             int id = (int)Grid_View_Users.DataKeys[index].Value;
+            bool check;
+            ErrorMessage.Visible = false;
 
             if (e.CommandName == "Delete") {
-                UserController.DeleteUser(id);
+                check = UserController.DeleteUser(id);
+                ErrorMessage.Text = "";
+                ErrorMessage.Visible = false;
+
+                if (check == false)
+                {
+                    ErrorMessage.Visible = true;
+                    ErrorMessage.Text = "User cant be delete!";
+                }
             }
         }
 
         protected void Grid_View_Users_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-
             Load_Grid();
         }
     }

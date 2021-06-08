@@ -3,7 +3,7 @@ using CentuDY.Model;
 using System;
 using System.Web.UI;
 
-namespace CentuDY.View.MedicinePage {
+namespace CentuDY.View {
 
     public partial class UpdateMedicine : System.Web.UI.Page
     {

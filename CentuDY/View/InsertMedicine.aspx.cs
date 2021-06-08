@@ -1,7 +1,7 @@
 ﻿using CentuDY.Controller;
 using System;
 
-namespace CentuDY.View.MedicinePage {
+namespace CentuDY.View {
     public partial class InsertMedicine : System.Web.UI.Page
     {
         static string name;

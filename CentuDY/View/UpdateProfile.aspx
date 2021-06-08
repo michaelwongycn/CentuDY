@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UpdateProfile.aspx.cs" Inherits="CentuDY.View.ProfilePage.UpdateProfile" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UpdateProfile.aspx.cs" Inherits="CentuDY.View.UpdateProfile" %>
 
 <!DOCTYPE html>
 

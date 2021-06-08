@@ -39,6 +39,7 @@ namespace CentuDY.View
 
             Grid_View_Transaction_History.DataSource = dataTransaction;
             Grid_View_Transaction_History.DataBind();
+            setGrandTotal();
         }
 
         private void checkUser()
@@ -63,6 +64,11 @@ namespace CentuDY.View
             }
         }
 
+        protected void setGrandTotal()
+        {
+            txtGrandTotal.Text = "Rp" + grandTotal.ToString();
+        }
+
         protected void Grid_View_Transaction_History_RowDataBound(object sender, GridViewRowEventArgs e)
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
@@ -70,9 +76,6 @@ namespace CentuDY.View
                 Label SubTotal = (Label)e.Row.FindControl("txtSubTotal");
 
                 grandTotal = grandTotal + int.Parse(SubTotal.Text);
-
-                Label GrandTotal = (Label)e.Row.FindControl("txtGrandTotal");
-                GrandTotal.Text = grandTotal.ToString();
             }
         }
     }

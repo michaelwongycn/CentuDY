@@ -1,16 +1,10 @@
 ﻿using CentuDY.Controller;
-using CentuDY.Handler;
 using CentuDY.Model;
-using CentuDY.Repository;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace CentuDY.View
-{
+namespace CentuDY.View {
     public partial class ViewUsers : System.Web.UI.Page
     {
         List<User> user;
@@ -43,10 +37,19 @@ namespace CentuDY.View
             Grid_View_Users.DataBind();
         }
 
+        protected void Grid_View_Users_RowCommand(object sender, GridViewCommandEventArgs e) {
+
+            int index = Convert.ToInt32(e.CommandArgument);
+            int id = (int)Grid_View_Users.DataKeys[index].Value;
+
+            if (e.CommandName == "Delete") {
+                UserController.DeleteUser(id);
+            }
+        }
+
         protected void Grid_View_Users_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            User users = user[e.RowIndex];
-            UserController.DeleteUser(users.UserId);
+
             Load_Grid();
         }
     }

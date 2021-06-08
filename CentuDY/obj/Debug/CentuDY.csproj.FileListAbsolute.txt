@@ -541,10 +541,6 @@ D:\NewRepo_PSD\CentuDY\CentuDY\obj\Debug\CentuDY.csproj.CoreCompileInputs.cache
 D:\NewRepo_PSD\CentuDY\CentuDY\obj\Debug\CentuDY.csproj.CopyComplete
 D:\NewRepo_PSD\CentuDY\CentuDY\obj\Debug\CentuDY.dll
 D:\NewRepo_PSD\CentuDY\CentuDY\obj\Debug\CentuDY.pdb
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\obj\Debug\CentuDY.csprojAssemblyReference.cache
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\obj\Debug\CentuDY.csproj.CoreCompileInputs.cache
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\obj\Debug\CentuDY.dll
-D:\Program Files (x86)\Repos\CentuDY\CentuDY\obj\Debug\CentuDY.pdb
 D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\CentuDY.dll.config
 D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\CentuDY.dll
 D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\CentuDY.pdb
@@ -620,4 +616,8 @@ D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\stdole.dll
 D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\EntityFramework.xml
 D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\EntityFramework.SqlServer.xml
 D:\Program Files (x86)\Repos\CentuDY\CentuDY\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Program Files (x86)\Repos\CentuDY\CentuDY\obj\Debug\CentuDY.csprojAssemblyReference.cache
+D:\Program Files (x86)\Repos\CentuDY\CentuDY\obj\Debug\CentuDY.csproj.CoreCompileInputs.cache
 D:\Program Files (x86)\Repos\CentuDY\CentuDY\obj\Debug\CentuDY.csproj.CopyComplete
+D:\Program Files (x86)\Repos\CentuDY\CentuDY\obj\Debug\CentuDY.dll
+D:\Program Files (x86)\Repos\CentuDY\CentuDY\obj\Debug\CentuDY.pdb

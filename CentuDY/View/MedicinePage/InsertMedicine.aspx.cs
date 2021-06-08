@@ -1,14 +1,7 @@
 ﻿using CentuDY.Controller;
-using CentuDY.Handler;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
-namespace CentuDY.View.MedicinePage
-{
+namespace CentuDY.View.MedicinePage {
     public partial class InsertMedicine : System.Web.UI.Page
     {
         static string name;

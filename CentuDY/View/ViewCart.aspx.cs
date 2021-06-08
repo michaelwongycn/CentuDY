@@ -22,7 +22,6 @@ namespace CentuDY.View {
         {
             userId = ((User)Session["user"]).UserId;
             carts = CartController.GetCartByUser(userId);
-            System.Diagnostics.Debug.WriteLine(carts);
             Grid_View_Cart.DataSource = carts;
             Grid_View_Cart.DataBind();
             setGrandTotal();

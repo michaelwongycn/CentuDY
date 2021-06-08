@@ -2,13 +2,9 @@
 using CentuDY.Model;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace CentuDY.View
-{
+namespace CentuDY.View {
     public partial class ViewTransactionsHistory : System.Web.UI.Page
     {
         protected int grandTotal = 0;

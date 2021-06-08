@@ -47,8 +47,9 @@ namespace CentuDY.View {
             if (roleId == 1)
             {
                 BtnInsertMedicine.Visible = true;
-                Grid_View_Medicines.Columns[4].Visible = true;
-                Grid_View_Medicines.Columns[5].Visible = false;
+                Grid_View_Medicines.Columns[4].Visible = false;
+                Grid_View_Medicines.Columns[5].Visible = true;
+                Grid_View_Medicines.Columns[6].Visible = true;
             }
         }
 
@@ -61,6 +62,14 @@ namespace CentuDY.View {
             {
                 Response.Redirect("~/View/AddToCart.aspx?Id=" + id);
             }
+
+            if (e.CommandName == "Update") {
+                Response.Redirect("~/View/MedicinePage/UpdateMedicine.aspx?id=" + id);
+            }
+
+            if (e.CommandName == "Delete") {
+                MedicineController.DeleteMedicine(id);
+            }
         }
 
         private void checkUser()
@@ -71,21 +80,12 @@ namespace CentuDY.View {
             }
         }
 
-        protected void Grid_View_Medicines_RowEditing(object sender, GridViewEditEventArgs e) {
-            Medicine medicines = medicine[e.NewEditIndex];
-            Response.Redirect("~/View/MedicinePage/UpdateMedicine.aspx?id=" + medicines.MedicineId);
-        }
-        protected void Grid_View_Medicines_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        protected void SearchBtn_Click(object sender, EventArgs e)
         {
-            Medicine medicines = medicine[e.RowIndex];
-            MedicineController.DeleteMedicine(medicines.MedicineId);
             Load_Grid();
         }
 
-
-
-        protected void SearchBtn_Click(object sender, EventArgs e)
-        {
+        protected void Grid_View_Medicines_RowDeleting(object sender, GridViewDeleteEventArgs e) {
             Load_Grid();
         }
     }

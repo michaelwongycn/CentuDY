@@ -25,8 +25,9 @@ namespace CentuDY.Controller
             if (quantity == "") { return "Quantity must be filled "; }
 
             int temp = 0;
-            int qty = int.Parse(quantity);
             if (!int.TryParse(quantity, out temp)) { return "Quantity must be numeric "; }
+            
+            int qty = int.Parse(quantity);
             if (qty <= 0) { return "Quantity must be more than 0 "; }
 
             Medicine medicine = MedicineHandler.GetMedicineById(medicineId);

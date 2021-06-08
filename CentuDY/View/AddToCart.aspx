@@ -1,15 +1,8 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AddToCart.aspx.cs" Inherits="CentuDY.View.AddToCart" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div>
-            <br />
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/MainPage.Master" AutoEventWireup="true" CodeBehind="AddToCart.aspx.cs" Inherits="CentuDY.View.AddToCart" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+   <br />
             <asp:Label Text="Medicine Name:" runat="server" />
             <asp:Label Text="" runat="server" ID="txtMedicineName" />
             <br />
@@ -29,8 +22,4 @@
             <asp:Label ID="txtAlert" Text="" runat="server" /><br /> 
             <br />
             <asp:Button ID="btnAddToCart" Text="Add to Cart" runat="server" OnClick="btnAddToCart_Click" />
-            <asp:Button ID="BtnViewCart" Text="View Cart" Visible="false" runat="server" OnClick="BtnViewCart_Click" />
-        </div>
-    </form>
-</body>
-</html>
+</asp:Content>

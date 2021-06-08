@@ -17,8 +17,8 @@ namespace CentuDY.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public User()
         {
-            this.HeaderTransaction = new HashSet<HeaderTransaction>();
             this.Cart = new HashSet<Cart>();
+            this.HeaderTransaction = new HashSet<HeaderTransaction>();
         }
     
         public int UserId { get; set; }
@@ -31,9 +31,9 @@ namespace CentuDY.Model
         public string Address { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Cart> Cart { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HeaderTransaction> HeaderTransaction { get; set; }
         public virtual Role Role { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Cart> Cart { get; set; }
     }
 }

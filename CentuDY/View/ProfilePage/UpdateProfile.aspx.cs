@@ -1,21 +1,17 @@
 ﻿using CentuDY.Controller;
-using CentuDY.Handler;
 using CentuDY.Model;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
-namespace CentuDY.View.ProfilePage
-{
+namespace CentuDY.View.ProfilePage {
     public partial class UpdateProfile : System.Web.UI.Page
     {
 
         protected void Page_Load(object sender, EventArgs e)
         {
             checkUser();
+            if (!IsPostBack) {
+                loadUserData();
+            }
         }
         private void checkUser()
         {
@@ -24,9 +20,28 @@ namespace CentuDY.View.ProfilePage
                Response.Redirect("~/View/Login.aspx");           
             }
         }
+
+        private void loadUserData()
+        {
+            int userId = ((User)Session["user"]).UserId;
+            User user = UserController.GetUserById(userId);
+
+            NameTxt.Text = user.Name;
+
+            int index = 0;
+            if (user.Gender == "Male") {
+                index = 1;
+            }
+            else {
+                index = 2;
+            }
+            genderDropDown.Items.FindByValue(index.ToString()).Selected = true;
+            PhoneTxt.Text = user.PhoneNumber;
+            AddressTxt.Text = user.Address;
+        }
         protected void BtnUpdateProfile_Click(object sender, EventArgs e)
         {
-            int userId = ((Model.User)Session["user"]).UserId;
+            int userId = ((User)Session["user"]).UserId;
             string name = NameTxt.Text;
             string gender = genderDropDown.SelectedItem.ToString();
             string phoneNumber = PhoneTxt.Text;

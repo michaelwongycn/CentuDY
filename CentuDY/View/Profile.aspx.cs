@@ -1,11 +1,6 @@
 ﻿using CentuDY.Controller;
 using CentuDY.Model;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace CentuDY.View
 {
@@ -16,7 +11,7 @@ namespace CentuDY.View
         {
             checkUser();
 
-            int id = ((Model.User)Session["user"]).UserId;
+            int id = ((User)Session["user"]).UserId;
             user = UserController.GetUserById(id);
 
             UserNameTxt.Text = user.Username;

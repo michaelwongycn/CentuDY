@@ -1,11 +1,6 @@
 ﻿using CentuDY.Controller;
+using CentuDY.Model;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-
 namespace CentuDY.View.ProfilePage
 {
     public partial class ChangePassword : System.Web.UI.Page
@@ -24,7 +19,7 @@ namespace CentuDY.View.ProfilePage
         }
         protected void BtnChangePassword_Click(object sender, EventArgs e)
         {
-            string username = ((Model.User)Session["user"]).Username;
+            string username = ((User)Session["user"]).Username;
             string oldPassword = OldPasswordTxt.Text;
             string newPassword = NewPasswordTxt.Text;
             string confrimPassword = ConfirmPasswordTxt.Text;

@@ -19,16 +19,16 @@ namespace CentuDY.Handler {
         }
 
         public static Boolean AddCart(int userId, int medicineId, int quantity) {
-            Cart tempCart = CartRepository.GetCartByUserAndMedicine(quantity, medicineId);
+            Cart tempCart = CartRepository.GetCartByUserAndMedicine(userId, medicineId);
 
-            if (tempCart != null) {
-                CartRepository.UpdateCartQuantity(userId, medicineId, quantity);
-                return false;
-            }
-            else {
+            if (tempCart == null) {
                 Cart cart = CartFactory.CreateCart(userId, medicineId, quantity);
                 CartRepository.AddCart(cart);
                 return true;
+            }
+            else {
+                CartRepository.UpdateCartQuantity(userId, medicineId, quantity);
+                return false;
             }
         }
 
@@ -61,6 +61,11 @@ namespace CentuDY.Handler {
                 int id = lastInsertedHt.TransactionId;
 
                 foreach (Cart cart in cartList) {
+                    Medicine medicine = MedicineRepository.GetMedicineById(cart.MedicineId);
+                    int newQuantity = medicine.Stock - cart.Quantity;
+
+                    MedicineRepository.UpdateMedicine(medicine.MedicineId, medicine.Name, medicine.Description, newQuantity, medicine.Price);
+
                     DetailTransaction detailTransaction =
                         DetailTransactionFactory.CreateDetailTransaction(id, cart.MedicineId, cart.Quantity);
 

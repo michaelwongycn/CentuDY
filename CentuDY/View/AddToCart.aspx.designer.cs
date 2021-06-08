@@ -7,21 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CentuDY.View
-{
+namespace CentuDY.View {
 
 
-    public partial class AddToCart
-    {
-
-        /// <summary>
-        /// form1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+    public partial class AddToCart {
 
         /// <summary>
         /// txtMedicineName control.
@@ -85,14 +74,5 @@ namespace CentuDY.View
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnAddToCart;
-
-        /// <summary>
-        /// BtnViewCart control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnViewCart;
     }
 }

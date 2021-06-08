@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 using CentuDY.Model;
 using CentuDY.Controller;
 
-namespace CentuDY.View
-{
+namespace CentuDY.View {
     public partial class ViewCart : System.Web.UI.Page
     {
         List<Cart> carts;
@@ -21,7 +18,7 @@ namespace CentuDY.View
 
         protected void Load_Grid()
         {
-            int userId = ((Model.User)Session["user"]).UserId;
+            int userId = ((User)Session["user"]).UserId;
             carts = CartController.GetCartByUser(userId);
             System.Diagnostics.Debug.WriteLine(carts);
             Grid_View_Cart.DataSource = carts;
@@ -52,7 +49,7 @@ namespace CentuDY.View
 
         private void roleIsMember()
         {
-            int roleId = ((Model.User)Session["user"]).RoleId;
+            int roleId = ((User)Session["user"]).RoleId;
 
             if (roleId == 1)
             {

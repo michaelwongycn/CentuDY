@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using CentuDY.Model;
 using CentuDY.Controller;
 
-namespace CentuDY.View
-{
+namespace CentuDY.View {
     public partial class AddToCart : System.Web.UI.Page
     {
         int MedicineId;
@@ -17,7 +11,7 @@ namespace CentuDY.View
         {
             checkUser();
             LoadMedicineData();
-            UserId = ((Model.User)Session["user"]).UserId;
+            UserId = ((User)Session["user"]).UserId;
         }
 
         protected void LoadMedicineData()
@@ -57,7 +51,7 @@ namespace CentuDY.View
 
         private void roleIsMember()
         {
-            int roleId = ((Model.User)Session["user"]).RoleId;
+            int roleId = ((User)Session["user"]).RoleId;
 
             if (roleId == 1)
             {
@@ -69,15 +63,7 @@ namespace CentuDY.View
         {
             string result =  CartController.AddCart(UserId, MedicineId, GetQuantity());
             txtAlert.Text = result;
-            if (result == "Add to cart success")
-            {
-                btnAddToCart.Visible = false;
-                BtnViewCart.Visible = true;
-            }
-        }
 
-        protected void BtnViewCart_Click(object sender, EventArgs e)
-        {
             Response.Redirect("~/View/ViewCart.aspx");
         }
     }

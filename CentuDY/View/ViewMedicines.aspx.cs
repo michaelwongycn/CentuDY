@@ -2,13 +2,9 @@
 using CentuDY.Controller;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace CentuDY.View
-{
+namespace CentuDY.View {
     public partial class ViewMedicines : System.Web.UI.Page
     {
         List<Medicine> medicine;
@@ -16,7 +12,9 @@ namespace CentuDY.View
         {
             checkUser();
             checkRole();
-            Load_Grid();
+            if (!IsPostBack) {
+                Load_Grid();
+            }
         }
 
         protected void Load_Grid()
@@ -44,21 +42,20 @@ namespace CentuDY.View
 
         private void checkRole()
         {
-            int roleId = ((Model.User)Session["user"]).RoleId;
+            int roleId = ((User)Session["user"]).RoleId;
 
             if (roleId == 1)
             {
                 BtnInsertMedicine.Visible = true;
-                Grid_View_Medicines.Columns[5].Visible = true;
-                Grid_View_Medicines.Columns[6].Visible = false;
+                Grid_View_Medicines.Columns[4].Visible = true;
+                Grid_View_Medicines.Columns[5].Visible = false;
             }
         }
 
-        protected void Grid_RowCommand(object sender, GridViewCommandEventArgs e)
+        protected void Grid_View_Medicines_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             int index = Convert.ToInt32(e.CommandArgument);
-            GridViewRow gvRow = Grid_View_Medicines.Rows[index];
-            int id = int.Parse(gvRow.Cells[0].Text);
+            int id = (int)Grid_View_Medicines.DataKeys[index].Value;
 
             if (e.CommandName == "AddToCart")
             {
@@ -73,6 +70,11 @@ namespace CentuDY.View
                 Response.Redirect("~/View/Login.aspx");
             }
         }
+
+        protected void Grid_View_Medicines_RowEditing(object sender, GridViewEditEventArgs e) {
+            Medicine medicines = medicine[e.NewEditIndex];
+            Response.Redirect("~/View/MedicinePage/UpdateMedicine.aspx?id=" + medicines.MedicineId);
+        }
         protected void Grid_View_Medicines_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             Medicine medicines = medicine[e.RowIndex];
@@ -80,11 +82,7 @@ namespace CentuDY.View
             Load_Grid();
         }
 
-        protected void Grid_View_Medicines_RowEditing(object sender, GridViewEditEventArgs e)
-        {
-            Medicine medicines = medicine[e.NewEditIndex];
-            Response.Redirect("~/View/MedicinePage/UpdateMedicine.aspx?id=" + medicines.MedicineId);
-        }
+
 
         protected void SearchBtn_Click(object sender, EventArgs e)
         {

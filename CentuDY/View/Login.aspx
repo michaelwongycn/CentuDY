@@ -10,7 +10,6 @@
             font-family: sans-serif;
         }
         #register{
-            color: black;
             text-decoration: none;
             font-size: large;
         }
@@ -21,8 +20,8 @@
     <form id="form1" runat="server">
         <div style="display:flex; justify-content: center; align-items: center; flex-direction: column">
             <div style="height: 450px; padding-top: 40px;">  
-                <asp:Label runat="server" Text="Email"></asp:Label><br />
-                <asp:TextBox ID="inputEmail" runat="server"></asp:TextBox>   
+                <asp:Label runat="server" Text="Username"></asp:Label><br />
+                <asp:TextBox ID="inputUsername" runat="server"></asp:TextBox>   
                 <br />        
                 <br />
                 <asp:Label runat="server" Text="Password"></asp:Label><br />
@@ -34,7 +33,7 @@
                 <asp:Label ID="lblMessage" Visible="false" Text="Label" runat="server" /><br />
                 <asp:Button ID="btnLogin" ValidationGroup="Login" OnClick="btnLogin_Click" Text="Login" runat="server" /> <br />
                 <br />
-                <asp:HyperLink ID="register" NavigateUrl="Register.aspx" Text="Register" runat="server" />
+                <asp:HyperLink ID="register" NavigateUrl="Register.aspx" Text="Register Now" runat="server" />
             </div>
         </div>
     </form>

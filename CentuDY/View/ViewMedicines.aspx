@@ -11,15 +11,14 @@
             <br />
             <asp:Button ID="BtnInsertMedicine" Visible="false" OnClick="BtnInsertMedicine_Click" runat="server" Text="Insert Medicine" />
             <br />
-            <asp:GridView ID="Grid_View_Medicines" runat="server" AutoGenerateColumns="false" OnRowCommand="Grid_RowCommand" OnRowDeleting="Grid_View_Medicines_RowDeleting" OnRowEditing="Grid_View_Medicines_RowEditing">
+            <asp:GridView ID="Grid_View_Medicines" runat="server" AutoGenerateColumns="false" DataKeyNames="MedicineId" OnRowCommand="Grid_View_Medicines_RowCommand" OnRowDeleting="Grid_View_Medicines_RowDeleting" OnRowEditing="Grid_View_Medicines_RowEditing">
                 <Columns>
-                    <asp:BoundField DataField="MedicineId" HeaderText="Id" SortExpression="MedicineId" Visible="true" />
                     <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
                     <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="Description" />
                     <asp:BoundField DataField="Stock" HeaderText="Stock" SortExpression="Stock" />
                     <asp:BoundField DataField="Price" HeaderText="Price" SortExpression="Price" />
                     <asp:CommandField ButtonType="Button" HeaderText="Action" ShowCancelButton="False" ShowDeleteButton="True" ShowEditButton="True" ShowHeader="True" Visible="false" />
-                    <asp:ButtonField Text="Add to Cart" HeaderText="Action" CommandName="AddToCart" ButtonType="Button" Visible="true" ItemStyle-Font-Underline="false" />
+                    <asp:ButtonField Text="Add to Cart" HeaderText="Action" CommandName="AddToCart" ButtonType="Button" ItemStyle-Font-Underline="false" />
             </Columns>
             </asp:GridView>
 </asp:Content>

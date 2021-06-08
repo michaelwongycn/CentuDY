@@ -1,13 +1,8 @@
 ﻿using CentuDY.Controller;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
-namespace CentuDY.View
-{
+namespace CentuDY.View {
     public partial class Login : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
@@ -15,11 +10,12 @@ namespace CentuDY.View
             checkUser();
             if (!IsPostBack)
             {
-                if (Request.Cookies["username"] != null && Request.Cookies["password"] != null)
+                if (Request.Cookies["User"] != null)
                 {
-                    inputEmail.Text = Request.Cookies["username"].Value;
-                    inputPassword.Attributes.Add("value", Request.Cookies["password"].Value);
+                    HttpCookie cookie = Request.Cookies["User"];
 
+                    inputUsername.Text = cookie["username"];
+                    inputPassword.Attributes.Add("value", cookie["password"]);
                 }
             }
         }
@@ -33,7 +29,7 @@ namespace CentuDY.View
         }
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            string email = inputEmail.Text;
+            string email = inputUsername.Text;
             string password = inputPassword.Text;
 
             var user = AuthController.Login(email, password);
@@ -50,10 +46,10 @@ namespace CentuDY.View
                 {
                     HttpCookie cookie = new HttpCookie("user");
                     cookie.Secure = true;
-                    cookie["username"] = inputEmail.Text;
+                    cookie["username"] = inputUsername.Text;
                     cookie["password"] = inputPassword.Text;
 
-                    if (inputEmail.Text != "" && inputPassword.Text != "")
+                    if (inputUsername.Text != "" && inputPassword.Text != "")
                     {
                         cookie.Expires = DateTime.Now.AddDays(1);
                         Response.Cookies.Add(cookie);

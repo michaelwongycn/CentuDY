@@ -25,11 +25,11 @@ namespace CentuDY.Model
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Cart> Cart { get; set; }
+        public virtual DbSet<DetailTransaction> DetailTransaction { get; set; }
         public virtual DbSet<HeaderTransaction> HeaderTransaction { get; set; }
         public virtual DbSet<Medicine> Medicine { get; set; }
         public virtual DbSet<Role> Role { get; set; }
         public virtual DbSet<User> User { get; set; }
-        public virtual DbSet<Cart> Cart { get; set; }
-        public virtual DbSet<DetailTransaction> DetailTransaction { get; set; }
     }
 }

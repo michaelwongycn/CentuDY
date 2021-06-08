@@ -2,13 +2,9 @@
 using CentuDY.Controller;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace CentuDY.View
-{
+namespace CentuDY.View {
     public partial class Home : System.Web.UI.Page
     {
         List<Medicine> medicine;
@@ -29,7 +25,6 @@ namespace CentuDY.View
 
         protected void Load_Grid()
         {
-            Grid_View_Medicine.Columns[5].Visible = true;
             medicine = MedicineController.GetRandomMedicines();
             Grid_View_Medicine.DataSource = medicine;
             Grid_View_Medicine.DataBind();
@@ -98,7 +93,7 @@ namespace CentuDY.View
         }
         private void checkRole()
         {
-            int roleId = ((Model.User)Session["user"]).RoleId;
+            int roleId = ((User)Session["user"]).RoleId;
 
             if (roleId == 1)
             {
@@ -118,8 +113,7 @@ namespace CentuDY.View
         protected void Grid_View_Medicine_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             int index = Convert.ToInt32(e.CommandArgument);
-            GridViewRow gvRow = Grid_View_Medicine.Rows[index];
-            int id = int.Parse(gvRow.Cells[0].Text);
+            int id = (int)Grid_View_Medicine.DataKeys[index].Value;
 
             if (e.CommandName == "AddToCart")
             {

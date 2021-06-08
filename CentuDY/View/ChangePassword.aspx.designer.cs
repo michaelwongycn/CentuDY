@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CentuDY.View.ProfilePage
+namespace CentuDY.View
 {
 
 

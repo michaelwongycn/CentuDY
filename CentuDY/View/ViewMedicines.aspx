@@ -22,4 +22,5 @@
                     <asp:ButtonField Text="Delete" HeaderText="Delete" CommandName="Delete" ButtonType="Button" ItemStyle-Font-Underline="false" Visible="false" />
             </Columns>
             </asp:GridView>
+            <asp:Label ID="ErrorMessage" Visible="false" runat="server" Text=""></asp:Label>
 </asp:Content>

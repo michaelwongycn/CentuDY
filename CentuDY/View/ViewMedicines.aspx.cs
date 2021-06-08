@@ -37,7 +37,7 @@ namespace CentuDY.View {
         }
         protected void BtnInsertMedicine_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/View/MedicinePage/InsertMedicine.aspx");
+            Response.Redirect("~/View/InsertMedicine.aspx");
         }
 
         private void checkRole()
@@ -57,19 +57,29 @@ namespace CentuDY.View {
         {
             int index = Convert.ToInt32(e.CommandArgument);
             int id = (int)Grid_View_Medicines.DataKeys[index].Value;
-
+            bool check;
+            
             if (e.CommandName == "AddToCart")
             {
                 Response.Redirect("~/View/AddToCart.aspx?Id=" + id);
             }
 
             if (e.CommandName == "Update") {
-                Response.Redirect("~/View/MedicinePage/UpdateMedicine.aspx?id=" + id);
+                Response.Redirect("~/View/UpdateMedicine.aspx?id=" + id);
             }
 
             if (e.CommandName == "Delete") {
-                MedicineController.DeleteMedicine(id);
-            }
+                check = MedicineController.DeleteMedicine(id);
+                ErrorMessage.Text = "";
+                ErrorMessage.Visible = false;
+                
+                if (check == false)
+                {
+                    ErrorMessage.Visible = true;
+                    ErrorMessage.Text = "Medicine cant be delete!";
+                }
+
+            }       
         }
 
         private void checkUser()

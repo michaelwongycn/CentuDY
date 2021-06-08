@@ -2,7 +2,7 @@
 using CentuDY.Model;
 using System;
 
-namespace CentuDY.View.ProfilePage {
+namespace CentuDY.View {
     public partial class UpdateProfile : System.Web.UI.Page
     {
 

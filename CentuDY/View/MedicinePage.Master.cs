@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CentuDY.View.MedicinePage {
+namespace CentuDY.View {
     public partial class MedicinePage : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)

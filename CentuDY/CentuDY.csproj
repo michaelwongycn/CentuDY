@@ -44,10 +44,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Web, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine">
+      <HintPath>c:\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource">
+      <HintPath>c:\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared">
+      <HintPath>c:\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Web">
+      <HintPath>c:\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.Web.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -1228,12 +1236,12 @@
     <Content Include="View\Home.aspx" />
     <Content Include="View\Login.aspx" />
     <Content Include="View\MainPage.Master" />
-    <Content Include="View\MedicinePage\InsertMedicine.aspx" />
-    <Content Include="View\MedicinePage\MedicinePage.Master" />
-    <Content Include="View\MedicinePage\UpdateMedicine.aspx" />
+    <Content Include="View\InsertMedicine.aspx" />
+    <Content Include="View\MedicinePage.Master" />
+    <Content Include="View\UpdateMedicine.aspx" />
     <Content Include="View\Profile.aspx" />
-    <Content Include="View\ProfilePage\ChangePassword.aspx" />
-    <Content Include="View\ProfilePage\UpdateProfile.aspx" />
+    <Content Include="View\ChangePassword.aspx" />
+    <Content Include="View\UpdateProfile.aspx" />
     <Content Include="View\Register.aspx" />
     <Content Include="View\ViewCart.aspx" />
     <Content Include="View\ViewMedicines.aspx" />
@@ -1340,25 +1348,25 @@
     <Compile Include="View\MainPage.Master.designer.cs">
       <DependentUpon>MainPage.Master</DependentUpon>
     </Compile>
-    <Compile Include="View\MedicinePage\InsertMedicine.aspx.cs">
+    <Compile Include="View\InsertMedicine.aspx.cs">
       <DependentUpon>InsertMedicine.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\MedicinePage\InsertMedicine.aspx.designer.cs">
+    <Compile Include="View\InsertMedicine.aspx.designer.cs">
       <DependentUpon>InsertMedicine.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\MedicinePage\MedicinePage.Master.cs">
+    <Compile Include="View\MedicinePage.Master.cs">
       <DependentUpon>MedicinePage.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\MedicinePage\MedicinePage.Master.designer.cs">
+    <Compile Include="View\MedicinePage.Master.designer.cs">
       <DependentUpon>MedicinePage.Master</DependentUpon>
     </Compile>
-    <Compile Include="View\MedicinePage\UpdateMedicine.aspx.cs">
+    <Compile Include="View\UpdateMedicine.aspx.cs">
       <DependentUpon>UpdateMedicine.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\MedicinePage\UpdateMedicine.aspx.designer.cs">
+    <Compile Include="View\UpdateMedicine.aspx.designer.cs">
       <DependentUpon>UpdateMedicine.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Profile.aspx.cs">
@@ -1368,18 +1376,18 @@
     <Compile Include="View\Profile.aspx.designer.cs">
       <DependentUpon>Profile.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\ProfilePage\ChangePassword.aspx.cs">
+    <Compile Include="View\ChangePassword.aspx.cs">
       <DependentUpon>ChangePassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\ProfilePage\ChangePassword.aspx.designer.cs">
+    <Compile Include="View\ChangePassword.aspx.designer.cs">
       <DependentUpon>ChangePassword.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\ProfilePage\UpdateProfile.aspx.cs">
+    <Compile Include="View\UpdateProfile.aspx.cs">
       <DependentUpon>UpdateProfile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\ProfilePage\UpdateProfile.aspx.designer.cs">
+    <Compile Include="View\UpdateProfile.aspx.designer.cs">
       <DependentUpon>UpdateProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Register.aspx.cs">
@@ -1477,7 +1485,9 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>50269</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://localhost:44377/</IISUrl>
+          <IISUrl>https://localhost:50269/</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>https://localhost:44377/</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

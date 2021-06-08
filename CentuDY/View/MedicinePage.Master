@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MedicinePage.master.cs" Inherits="CentuDY.View.MedicinePage.MedicinePage" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MedicinePage.master.cs" Inherits="CentuDY.View.MedicinePage" %>
 
 <!DOCTYPE html>
 

@@ -1,7 +1,7 @@
 ﻿using CentuDY.Controller;
 using CentuDY.Model;
 using System;
-namespace CentuDY.View.ProfilePage
+namespace CentuDY.View
 {
     public partial class ChangePassword : System.Web.UI.Page
     {

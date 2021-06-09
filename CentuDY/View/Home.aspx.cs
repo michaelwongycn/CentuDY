@@ -58,7 +58,7 @@ namespace CentuDY.View {
 
         protected void BtnInsertMedicine_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/View/MedicinePage/InsertMedicine.aspx");
+            Response.Redirect("~/View/InsertMedicine.aspx");
         }
 
         protected void BtnViewUsers_Click(object sender, EventArgs e)
